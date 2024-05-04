@@ -1,0 +1,3368 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laulusõnad</title>
+    <link rel="icon" type="image/x-icon" href="Icon.png">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(to bottom, #614385, #516395);
+    font-family: 'Roboto', sans-serif; /* Roboto font from Google Fonts */
+    color: #ffffff;            
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+    .logo-container {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+}
+
+.logo-container img {
+  max-width: 125px;
+  height: auto;
+}
+.container {
+  display: flex;
+}
+.menu {
+			background-color: #333333;
+			height: 100%;
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 350px;
+			color: #fff;
+			font-size: 18px;
+			padding-top: 10px;
+            overflow: auto; /* add scrollbar when menu exceeds height */
+		}
+		.menu a {
+			display: block;
+			color: #fff;
+			padding: 5px;
+			text-decoration: none;
+            overflow: auto; /* add scrollbar when menu exceeds height */
+		}
+		.menu a:hover {
+			background-color: #555;
+		}
+        .subpage-btn {
+  display: inline-block;
+  padding: 10px 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  right: 170px;
+}
+        
+</style>
+<script src="Laulusõnad.js"></script>
+<div class="container">
+    <div class="menu">
+      <h3>Laulud:</h3>
+      <input type="text" id="search" onkeyup="searchSong()" placeholder="Otsi laulu..." style="font-size: 15px; width: 150px;">
+      <ul id="song-list">
+        <li><a href="#" onclick="showSong('song56')">13 sammu</a></li>
+        <li><a href="#" onclick="showSong('song49')">15 magamata ööd</a></li>
+        <li><a href="#" onclick="showSong('song1')">Aeg ei peatu</a></li>
+        <li><a href="#" onclick="showSong('song57')">Ainult sina võid mu maailma muuta</a></li>
+        <li><a href="#" onclick="showSong('song2')">Aita mööda saata öö</a></li>
+        <li><a href="#" onclick="showSong('song58')">Ajateenija</a></li>
+        <li><a href="#" onclick="showSong('song3')">Amarillo</a></li>
+        <li><a href="#" onclick="showSong('song46')">Armastuse laul</a></li>
+        <li><a href="#" onclick="showSong('song4')">Besame mucho</a></li>
+        <li><a href="#" onclick="showSong('song61')">Doomino</a></li>
+        <li><a href="#" onclick="showSong('song5')">Eesti muld ja Eesti süda</a></li>
+        <li><a href="#" onclick="showSong('song6')">Ei me ette tea</a></li>
+        <li><a href="#" onclick="showSong('song7')">Ei meelest läe mul iial</a></li>
+        <li><a href="#" onclick="showSong('song8')">Ei ole üksi ükski maa</a></li>
+        <li><a href="#" onclick="showSong('song54')">Heiki</a></li>
+        <li><a href="#" onclick="showSong('song9')">Helmi</a></li>
+        <li><a href="#" onclick="showSong('song42')">Hommikud</a></li>
+        <li><a href="#" onclick="showSong('song62')">Hääletu</a></li>
+        <li><a href="#" onclick="showSong('song10')">Hüvasti kollane koer</a></li>
+        <li><a href="#" onclick="showSong('song11')">Hüvasti, Maria</a></li>
+        <li><a href="#" onclick="showSong('song12')">Inimene õpib</a></li>
+        <li><a href="#" onclick="showSong('song13')">Insener Garini hüperboloid</a></li>
+        <li><a href="#" onclick="showSong('song48')">Iseendale</a></li>
+        <li><a href="#" onclick="showSong('song14')">Jaanipäev</a></li>
+        <li><a href="#" onclick="showSong('song15')">Jambalaya</a></li>
+        <li><a href="#" onclick="showSong('song55')">Juulikuu lumi</a></li>
+        <li><a href="#" onclick="showSong('song70')">Kaelakee hääl</a></li>
+        <li><a href="#" onclick="showSong('song16')">Karulaul</a></li>
+        <li><a href="#" onclick="showSong('song44')">Kauges külas</a></li>
+        <li><a href="#" onclick="showSong('song71')">Keelatud maa</a></li>
+        <li><a href="#" onclick="showSong('song50')">Keerlen</a></li>
+        <li><a href="#" onclick="showSong('song59')">Kiri külmkapi peal</a></li>
+        <li><a href="#" onclick="showSong('song17')">Kodu ja ristikhein</a></li>
+        <li><a href="#" onclick="showSong('song18')">Kui mind enam ei ole</a></li>
+        <li><a href="#" onclick="showSong('song51')">Kus kulgeb kuu</a></li>
+        <li><a href="#" onclick="showSong('song66')">Lootus</a></li>
+        <li><a href="#" onclick="showSong('song41')">Lõpmatuses</a></li>
+        <li><a href="#" onclick="showSong('song40')">Maagia</a></li>
+        <li><a href="#" onclick="showSong('song19')">Matkalaul</a></li>
+        <li><a href="#" onclick="showSong('song68')">Mere lapsed</a></li>
+        <li><a href="#" onclick="showSong('song20')">Michelangelo</a></li>
+        <li><a href="#" onclick="showSong('song60')">Miraaž</a></li>
+        <li><a href="#" onclick="showSong('song21')">Mis värvi on armastus</a></li>
+        <li><a href="#" onclick="showSong('song22')">Mu isamaa, mu õnn ja rõõm</a></li>
+        <li><a href="#" onclick="showSong('song45')">Muinaslugu muusikas</a></li>
+        <li><a href="#" onclick="showSong('song67')">Muretut meelt ja südametuld</a></li>
+        <li><a href="#" onclick="showSong('song23')">Mustamäe valss</a></li>
+        <li><a href="#" onclick="showSong('song72')">Nagu merelaine</a></li>
+        <li><a href="#" onclick="showSong('song24')">Naised on hullud</a></li>
+        <li><a href="#" onclick="showSong('song25')">Oma laulu ei leia ma üles</a></li>
+        <li><a href="#" onclick="showSong('song36')">Parem veelgi</a></li>
+        <li><a href="#" onclick="showSong('song26')">Rahu</a></li>
+        <li><a href="#" onclick="showSong('song27')">Sa oled mul teine</a></li>
+        <li><a href="#" onclick="showSong('song28')">Saaremaa valss</a></li>
+        <li><a href="#" onclick="showSong('song29')">See viis haaras mind</a></li>
+        <li><a href="#" onclick="showSong('song30')">Shakespeare</a></li>
+        <li><a href="#" onclick="showSong('song31')">Sisemine ilu</a></li>
+        <li><a href="#" onclick="showSong('song38')">Soovin head</a></li>
+        <li><a href="#" onclick="showSong('song32')">Suudlus läbi jäätunud klaasi</a></li>
+        <li><a href="#" onclick="showSong('song33')">Sõbra laul</a></li>
+        <li><a href="#" onclick="showSong('song69')">Tagareas</a></li>
+        <li><a href="#" onclick="showSong('song37')">Tartust Pariis</a></li>
+        <li><a href="#" onclick="showSong('song53')">Tiffer</a></li>
+        <li><a href="#" onclick="showSong('song65')">Tuhk ja tolm</a></li>
+        <li><a href="#" onclick="showSong('song63')">Valikud</a></li>
+        <li><a href="#" onclick="showSong('song34')">Vana mehe laul</a></li>
+        <li><a href="#" onclick="showSong('song39')">Veel ja veel</a></li>
+        <li><a href="#" onclick="showSong('song35')">Viis viimast</a></li>
+        <li><a href="#" onclick="showSong('song64')">Wingman</a></li>        
+        <li><a href="#" onclick="showSong('song52')">Väike saatan</a></li>
+        <li><a href="#" onclick="showSong('song43')">Õpetaja</a></li>
+        <li><a href="#" onclick="showSong('song47')">Ämblikmees</a></li>
+        <br>
+      </ul>
+    </div>
+    <div class="logo-container">
+        <img src="Tornaado.png" alt="Logo">
+      </div>
+    </div>
+    <div class="content">
+      <div id="song34" class="song-text" style="display:none"> <h3 class="song-title"> Olav Ehala - Vana mehe laul</h3>        
+          <br>          
+          Seda õnne kõik ei aima, mis on vanal mehel siis,<br>
+          enne surma kui saab õnnistust ta veider eluviis;<br>
+          Kuigi maalitud on kolle, annab sooja tuli, jaa -<br>
+          tean mu elutööd nüüd jätkab poeg,<br>
+          mu järeltulija.<br>
+          <br>
+          Sina jõuad kaugemale, kuni kord ka Sina oled muld.<br>
+          Üks on tõde ning mingi vale,<br>
+          ei saa kustutada igavese tõsielu tuld.<br>
+          <br>
+          Olen vana mees ja sellepärast lihtne on mu jutt,<br>
+          varsti lõpetamas olen oma elurännakut.<br>
+          Ära pahanda, kui laul on<br>
+          liiga lihtne, õpetlik.<br>
+          Kuula ära, sest me elu<br>
+          selles ilmas pole pikk.<br>
+          <br>
+          Sina jõuad kaugemale, kuni kord ka Sina oled muld.<br>
+          Üks on tõde ning mingi vale,<br>
+          ei saa kustutada igavese tõsielu tuld.<br>
+          <br>
+          Meie eitus, meie jaatus liugleb tuules nagu leht,<br>
+          see mis saadab, ongi saatus ikka õiglane ja eht.<br>
+          Oma hinge ei või müüa, kuri ilm las udutab.<br>
+          Ainult seda omaks hüüa, mis su hinge puudutab.<br>
+          <br>
+          Sina jõuad kaugemale, kuni kord ka Sina oled muld.<br>
+          Üks on tõde ning mingi vale,<br>
+          ei saa kustutada igavese tõsielu tuld.<br>
+          <br>
+          Üks on tõde ning mingi vale,<br>
+          ei saa kustutada igavese tõsielu tuld.<br>
+          <br>
+          Ei sa kustutada igavese tõsielu tuld.<br>
+          <br>          
+          </div>
+        </div>
+      <div id="song33" class="song-text" style="display:none"> <h3 class="song-title"> Erich Krieger & Martin Müürsepp - Sõbra laul</h3>
+        <br>
+        Sina oled minu sõber<br>
+        Meie jutt ei ole tavaline<br>
+        meie jutus on see tõde<br>
+        mis on antuid hetkel oluline<br>
+        <br>
+        Anna andeks mis on vale<br>
+        kuid ma andsin endast parima<br>
+        Parima mis veel on minus<br>
+        <br>
+        Tegelikult see on viga<br>
+        me ei ole ammu kokku saanud<br>
+        kokku võtnud selle asja<br>
+        mis on hakand jälle hinge närima<br>
+        <br>
+        see ei ole mingi juhus<br>
+        et siin paigas just me kokku saime<br>
+        sina oled minu sõber<br>
+        <br>
+        Aeg kõike teha<br>
+        Aeg hoiab sõpru häid<br>
+        Aeg meidki näeb<br>
+        <br>
+        Miskipäras mul on tunne<br>
+        Parim päev on meil veel kõigil ees<br>
+        Võtta asja rahulikult<br>
+        pika peale kõik saab ära tehtud<br>
+        Ära teeme needki nipid<br>
+        Mille jaoks meid üldse ilma loodi<br>
+        Pea vastu sõber<br>
+        <br>
+        Aeg kõike teha<br>
+        Aeg hoiab sõpru häid<br>
+        Aeg meidki näeb<br>
+        <br>
+        Aeg kõike teha<br>
+        Aeg hoiab sõpru häid<br>
+        Aeg meidki näeb<br>
+        <br>
+        Aeg kõike teha<br>
+        Aeg hoiab sõpru häid<br>
+        Aeg meidki näeb<br>
+        <br>
+        Aeg kõike teha<br>
+        Aeg hoiab sõpru häid<br>
+        Aeg meidki näeb<br>
+        <br>
+        Sina oled minu sõber<br>
+        Meie jutt ei ole tavaline<br>
+        meie jutus on see tõde<br>
+        mis on antuid hetkel oluline<br>
+        <br>
+        Anna andeks mis on vale<br>
+        kuid ma andsin endast parima<br>
+        Parima mis veel on minus<br>
+        <br>              
+    </div>
+      <div id="song24" class="song-text" style="display:none"> <h3 class="song-title"> Erich Krieger - Naised on hullud</h3>
+        <br>
+        Hullud ning veetlevad naised<br>
+        Hullud ja upsakad nad<br>
+        Hullupööra mind veetleb<br>
+        Naerma kui nad puhkevad<br>
+        <br>
+        Üleolekut ja põlgust<br>
+        On kõike nende sees<br>
+        Ometi neid ma armastan<br>
+        Just nende hulluse eest<br>
+        <br>
+        Naised on hullud<br>
+        Hullud ja uhked on nad<br>
+        Neid hulle püüda katsed<br>
+        Mõnikord mul luhtuvad<br>
+        <br>
+        Isegi kui nad mind naeraks<br>
+        Kibedalt vihaga<br>
+        Ometi neid ma just püüaks<br>
+        Püüaks ihaga<br>
+        <br>
+        Miks sina siis ennast peidad<br>
+        Ja teeskled tavalist naist<br>
+        Ma tean ju sinus on peidus<br>
+        Nii palju ebamaist<br>
+        <br>
+        Naised on hullud<br>
+        Hullud ja uhked on nad<br>
+        Neid hulle püüda katsed<br>
+        Mõnikord mul luhtuvad<br>
+        <br>
+        Naised on hullud<br>
+        Hullud ja uhked on nad<br>
+        Neid hulle püüda katsed<br>
+        Mõnikord mul<br>
+        <br>
+        Hullud ning veetlevad naised<br>
+        Hullud ja upsakad nad<br>
+        Hullupööra mind veetleb<br>
+        Naerma kui nad puhkevad<br>
+        <br>
+        Üleolekut ja põlgust<br>
+        On kõike nende sees<br>
+        Ometi neid ma armastan<br>
+        Just nende hulluse eest<br>
+        <br>
+        Naised on hullud<br>
+        Hullud ja uhked on nad<br>
+        Neid hulle püüda katsed<br>
+        Mõnikord mul luhtuvad<br>
+        <br>
+        Naised on hullud<br>
+        Hullud ja uhked on nad<br>
+        Neid hulle püüda katsed<br>
+        Mõnikord mul luhtuvad<br>
+        <br>
+        Naised on hullud<br>
+        Hullud ja uhked on nad<br>
+        Neid hulle püüda katsed<br>
+        Mõnikord mul luhtuvad<br>
+        <br>
+        Naised on hullud<br>
+        Hullud ja uhked on nad<br>
+        Neid hulle püüda katsed<br>
+        Mõnikord mul luhtuvad<br>    
+        <br>
+        Naised on hullud<br>
+        Hullud ja uhked on nad<br>
+        Neid hulle püüda katsed<br>
+        Mõnikord mul<br>
+        <br>              
+    </div>
+    <div id="song12" class="song-text" style="display:none"> <h3 class="song-title"> Ruja - Inimene õpib</h3>
+        <br>
+        Mida Juku ei õpi,<br>
+        seda Juhan ei tea.<br>
+        Mida Juhan ei tea,<br>
+        seda ta salgab.<br>
+        <br>
+        Ja siis, kui vana Juhan<br>
+        ükskord tunnistama peab,<br>
+        et ta midagi ei tea,<br>
+        on mehel kohe vastus valmis,<br>
+        on kohe vastus valmis:<br>
+        <br>
+        Inimene õpib kogu elu,<br>
+        sureb aga ikka lollina.<br>
+        Inimene õpib kogu elu,<br>
+        sureb aga ikka lollina,<br>
+        lollina, sureb ikka lollina.<br>
+        <br>
+        Mida ema ei ütle,<br>
+        seda Mari ei tea.<br>
+        Mida Mari ei tea,<br>
+        seda ta salgab.<br>
+        <br>
+        Ja siis, kui Juku ükskord<br>
+        talle asja selgeks teeb,<br>
+        Mari käima peale jääb,<br>
+        ja emalgi on vastus valmis,<br>
+        on kohe vastus valmis:<br>
+        <br>
+        Inimene õpib kogu elu,<br>
+        sureb aga ikka lollina.<br>
+        Inimene õpib kogu elu,<br>
+        sureb aga ikka lollina,<br>
+        lollina, sureb ikka lollina.<br>
+        <br>
+        Mida professor õpib,<br>
+        mida õpib, ei tea.<br>
+        Kogu elu murrab pead,<br>
+        aga salgab.<br>
+        <br>
+        Professor muudkui kordab,<br>
+        et ta midagi ei tea,<br>
+        kogu elu murrab pead,<br>
+        ja lõpuks on tal vastus valmis,<br>
+        on lõpuks vastus valmis:<br>
+        <br>
+        Inimene õpib kogu elu,<br>
+        sureb aga ikka lollina.<br>
+        Inimene õpib kogu elu,<br>
+        sureb aga ikka lollina,<br>
+        lollina, sureb ikka lollina.<br>
+        <br>
+        Lollina, lollina,<br>
+        sureb ikka lollina.<br>
+        Lollina, lollina,<br>
+        sureb ikka lollina.<br>
+        <br>    
+    </div>
+    <div id="song5" class="song-text" style="display:none"> <h3 class="song-title"> Ruja - Eesti muld ja Eesti süda</h3>
+        <br>
+        Süda kuis Sa ruttu tõused kuumalt rinnas tuksuma,<br>
+        kui Su nime suhu võtan püha Eesti isamaa.<br>
+        Head olen näind ja paha, mõnda jõudsin kaota,<br>
+        mõnda elus jätan maha, sind ei iial unusta.<br>
+        <br>
+        Sinu rinnul olen hingand kui ma vaevalt astusin,<br>
+        Sinu õhku olen joonud kui ma rõõmust hõiskasin.<br>
+        Minu pisaraid Sa näinud, minu muret kuulnud Sa,<br>
+        Eestimaa mu tööd, mu laulud, Sul neid tulin rääkima.<br>
+        <br>
+        Oh ei jõua iial öelda ma kuis täidad südame,<br>
+        Sinu põue tahan heita ma kord viimse unele.<br>
+        Ema kombel kinni kata lapse tuksvat rinda Sa,<br>
+        Eesti muld ja Eesti süda, kes neid jõuaks lahuta.<br>
+        <br>
+        Oh ei jõua iial öelda ma kuis täidad südame,<br>
+        Sinu põue tahan heita ma kord viimse unele.<br>
+        Ema kombel kinni kata lapse tuksvat rinda Sa,<br>
+        Eesti muld ja Eesti süda, kes neid jõuaks lahuta.<br>
+        <br>
+        Eesti muld ja Eesti süda, kes neid jõuaks lahuta.<br>
+        <br>        
+    </div>
+    <div id="song26" class="song-text" style="display:none"> <h3 class="song-title"> Ruja - Rahu</h3>
+        <br>
+        Vaikusse, valgusse, puhtusse<br>
+        minna suudan, kui ületan enda.<br>
+        Sinusse usun kui kindlasse linna,<br>
+        ära siis minema lenda.<br>
+        <br>
+        Kõik, mida tunnen, pean vaikima maha.<br>
+        Sina, Sina vaid vaikuses kajad.<br>
+        <br>
+        Tahan ja tahan nüüd taevaste taha,<br>
+        küllap siis seda on vaja.<br>
+        Tahan ja tahan nüüd taevaste taha,<br>
+        selleks mul sindki on,<br>
+        selleks mul sindki on vaja!<br>
+        <br>
+        Mul on su ilu vaja,<br>
+        mul on su elu vaja,<br>
+        mul on su hinge vaja,<br>
+        sinu ilu vaja,<br>
+        sinu rahu vaja mul on.<br>
+        <br>
+        Mul on su ilu vaja,<br>
+        mul on su elu vaja,<br>
+        mul on su hinge vaja,<br>
+        sinu ilu vaja,<br>
+        sinu rahu vaja mul on.<br>
+        <br>
+    </div>
+    <div id="song27" class="song-text" style="display:none"> <h3 class="song-title"> Ruja - Sa oled mul teine</h3>
+        <br>
+        Mul oli ükskord vahekord,<br>
+        mis selgitamist nõudis.<br>
+        Sest kui on kord, siis olgu kord.<br>
+        Jutt sinnamaale jõudis,<br>
+        et kas on esimene kord<br>
+        see poisiga tal olla<br>
+        ja ise väga lootsin ma, et<br>
+        nõnda see võiks olla,<br>
+        kuid hellalt kõrva sosistas<br>
+        siis minule see ella:<br>
+        <br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine,<br>
+        teine, teine!<br>
+        <br>
+        Mul oli veel üks vahekord,<br>
+        mis viis mind linnast välja,<br>
+        kus kohe tekkis olukord<br>
+        ja natuke sai nalja.<br>
+        Ei küsind ma talt midagi,<br>
+        ta ise oli aldis<br>
+        ja ümberringi kedagi ei olnud,<br>
+        hiljem tuldi.<br>
+        Kuid siiski kuulsin sedagi,<br>
+        sest neiu väga heldis.<br>
+        <br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine,<br>
+        teine, teine!<br>
+        <br>
+        Veel oli mõni vahekord,<br>
+        sest aeg ei peatu ju.<br>
+        Ja öisel ajal mõnikord<br>
+        nii kaunilt kumab Kuu.<br>
+        Ja omamoodi iga kord<br>
+        ma püüdsin olla truu,<br>
+        kuid siiski kuulsin<br>
+        alati ühtsama neiu suust.<br>
+        See töde oli alasti,<br>
+        kuid polnud mulle uus.<br>
+        <br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine!<br>
+        Sa oled mul teine,<br>
+        teine, teine!<br>
+        <br>
+        Teine.<br>
+        Teine.<br>
+        Teine.<br>
+        Teine.<br>
+        Teine.<br>
+        Teine.<br>
+        Teine.<br>
+        Teine.<br>
+        Teine.<br>
+        Teine.<br>
+        <br>        
+    </div>
+    <div id="song32" class="song-text" style="display:none"> <h3 class="song-title"> Ruja - Suudlus läbi jäätunud klaasi</h3>
+        <br>
+        Hetke vaid mõni mälestus kestab,<br>
+        kuid on neid, mida minna ei lasta.<br>
+        Küllap siis on meil väga neid vaja,<br>
+        sest nad leiavad aja, külastavad meid taas.<br>
+        <br>
+        Hetke vaid mõni mälestus kestab,<br>
+        kuid on neid, mida minna ei lasta.<br>
+        Küllap siis meie vajame neid,<br>
+        sest nad tulevad taas, kas Sa ootad või ei.<br>
+        <br>
+        Sajab akna taga laia valget lund veel õhtu eel.<br>
+        Ja ma äkki läbi jäätunud klaasi siis Su silmi näen.<br>
+        Sina surud vastu külma klaasi suu ja mina ka.<br>
+        Ja jäälilled kõik me aknaklaasil siis sulavad.<br>
+        <br>
+        Hetke vaid mõni mälestus kestab,<br>
+        kuid on neid, mida minna ei lasta.<br>
+        Küllap siis on meil väga neid vaja,<br>
+        sest nad leiavad aja, külastavad meid taas.<br>
+        <br>
+        Hetke vaid mõni mälestus kestab,<br>
+        kuid on neid, mida minna ei lasta.<br>
+        Küllap siis meie vajame neid,<br>
+        sest nad tulevad taas, kas Sa ootad või ei.<br>
+        <br>
+        Sellest päevast saab nüüd õige mitu lund ja muudki veel.<br>
+        Tundub nagu oleks toona näinud und ma õhtu eel.<br>
+        Nüüd mu akna taga ulub jäine tuul ja kurb on meel,<br>
+        kuigi aken on just nõnda nagu siis lilledes.<br>
+        <br>
+    </div>
+    <div id="song18" class="song-text" style="display:none"> <h3 class="song-title"> Urmas Alender - Kui mind enam ei ole</h3>
+        <br>
+        Ma hoian Su käsi, mu kallis,<br>
+        kui tuju sul nukker ja hall.<br>
+        Mu kingitud villases sallis<br>
+        ei tundu nii käre külm talv.<br>
+        <br>
+        Ma korjan Su üles, kui langed<br>
+        ja üksinda tõusta ei saa.<br>
+        Ei hooli, et väljas on hanged -<br>
+        mu juures küll sooja Sa saad.<br>
+        <br>
+        Ent oled Sa mõelnud või tundnud,<br>
+        mis saab, kui mind enam ei ole?<br>
+        Kui endasse tagasi tõmbun,<br>
+        kui Sulle mind enam ei ole?<br>
+        <br>
+        Võib-olla Sul jäävana tundun<br>
+        kui meri või põline laas,<br>
+        või taevas, mis pea kohal kummub,<br>
+        kui kastetilk auramas maas.<br>
+        <br>
+        Ent minulgi vahel on valus,<br>
+        kui peitma pean pisaraid;<br>
+        ma tean ju, Sa kergelt ei talu<br>
+        mu kurbuste tagamaid.<br>
+        <br>
+        Kas aimad, kui habras on niit,<br>
+        mis mind Sinu või eluga seob,<br>
+        ja jäädavalt minema siit<br>
+        mõni tunnetu hetk minu viib?<br>
+        <br>
+        Kas oled siis mõelnud või tundnud,<br>
+        mis saab, kui mind enam ei ole?<br>
+        Kui endasse tagasi tõmbun,<br>
+        kui Sulle mind enam ei ole?<br>
+        <br>
+        Kui mind enam ei ole,<br>
+        pole Sinule olemas?<br>
+        Kui mind enam ei ole,<br>
+        pole Sinu jaoks olemas?<br>
+        <br>        
+    </div>
+    <div id="song10" class="song-text" style="display:none"> <h3 class="song-title"> Urmas Alender - Hüvasti kollane koer</h3>
+        <br>
+        Vaikselt nutta nurgas tihub<br>
+        pisikene nukker koer.<br>
+        Mingi mure teda rõhub.<br>
+        Miks siis nutab väike koer?<br>
+        <br>
+        On's tal' keegi teinud paha,<br>
+        et nii kurb on koera meel.<br>
+        Või on jätnud teda maha<br>
+        keegi kallis eluteel.<br>
+        <br>
+        Istub nurgas nüüd kollane kutsu,<br>
+        Pisar läigib ta koonu ees maas.<br>
+        Istub haugatab Sind jälle kutsub.<br>
+        Miks ei tule, oh miks ei tule Sa?<br>
+        <br>
+        Läksid öösel kui pime oli kõikjal,<br>
+        magas sõbrake Su voodi ees.<br>
+        Sa läksid uks paugatas vaid võikalt,<br>
+        nüüd kutsika silmad on vees.<br>
+        <br>
+        "Jää hüvasti kollane koer",<br>
+        ütlesid kui lahkusid<br>
+        "Jää hüvasti kollane koer",<br>
+        ütlesid ja läksid siis.<br>
+        <br>        
+    </div>
+    <div id="song22" class="song-text" style="display:none"> <h3 class="song-title"> Mu isamaa, mu õnn ja rõõm<br>(Eesti hümn)</h3>
+        <br>
+        Mu isamaa, mu õnn ja rõõm,<br>
+        kui kaunis oled sa!<br>
+        Ei leia mina iial teal<br>
+        see suure, laia ilma peal,<br>
+        mis mul nii armas oleks ka,<br>
+        kui sa, mu isamaa!<br>
+        <br>
+        Sa oled mind ju sünnitand<br>
+        ja üles kasvatand;<br>
+        sind tänan mina alati<br>
+        ja jään sull' truuiks surmani,<br>
+        mul kõige armsam oled sa,<br>
+        mu kallis isamaa!<br>
+        <br>
+        Su üle Jumal valvaku,<br>
+        mu armas isamaa!<br>
+        Ta olgu sinu kaitseja<br>
+        ja võtku rohkest õnnista,<br>
+        mis iial ette võtad sa,<br>
+        mu kallis isamaa!<br>
+        <br>        
+    </div>
+    <div id="song1" class="song-text" style="display:none"> <h3 class="song-title"> Apelsin - Aeg ei peatu</h3>
+        <br>
+        See on nii seatud et aeg ei peatu,<br>
+        vaid aina edasi tõttab.<br>
+        Ja päevad läevad ja aastad mööduvad.<br>
+        <br>
+        Ja sul on kiire on väga kiire,<br>
+        sa aina kuhugi tõttad<br>
+        ja päeva püüad ja märkamatult õhtu ongi käes.<br>
+        <br>
+        Ei aeg ei peatu ei, ei<br>
+        Ei aeg ei peatu, ei, ei<br>
+        <br>
+        Sa peatu hetkeks ja mõtle veidi<br>
+        kesk vaikust kiirustamata.<br>
+        Sest aastad lähevad ja päevad mööduvad.<br>
+        <br>
+        Mis saab mis tuleb kui kaugel oled,<br>
+        kas tead ka, kuhu nii tõttad?<br>
+        Kui ootad veidi, näed järele sul jõudnud ongi päev.<br>
+        <br>
+        Ei aeg ei peatu ei, ei<br>
+        Ei aeg ei peatu ei, ei<br>
+        Ei aeg ei peatu ei, ei<br>
+        Ei aeg ei peatu ei, ei<br>
+        <br>
+        Mis saab mis tuleb kui kaugel oled,<br>
+        kas tead ka, kuhu nii tõttad?<br>
+        Kui ootad veidi ja seisatud, siis paremini näed.<br>
+        <br>
+        Ei aeg ei peatu ei, ei<br>
+        Ei aeg ei peatu ei, ei, aeg ei peatu ei<br>
+        Ei aeg ei peatu ei, ei, ei, ei, ei, ei<br>
+        Ei aeg ei peatu ei, ei <br>
+        <br>        
+    </div>
+    <div id="song15" class="song-text" style="display:none"> <h3 class="song-title"> Apelsin - Jambalaya</h3>
+        <br>
+        Nägin und maast, mis kusagil kaugel.<br>
+        See oli päikest täis ja kõneldi seal lauldes.<br>
+        Sirged teed viisid apelsinimajja.<br>
+        Mulle öeldi, et see maa on Jambalaya<br>
+        <br>
+        Jambalay' miks küll ilmsi sind ei leia?<br>
+        Kas ehk teed su juurde nõnda raske leida?<br>
+        Tahaks tantsida apelsinimajja.<br>
+        Õnn on see kui leiad oma Jambalaya.<br>
+        <br>
+        Seal sambarütmis käis tormakas elu,<br>
+        ei teadnud keegi, mis on mure, mis on valu.<br>
+        Mustad särasilmad naeratasid vastu<br>
+        kui mu jalg suurel teel aralt astus.<br>
+        <br>
+        Jambalay' miks küll ilmsi sind ei leia?<br>
+        Kas ehk teed su juurde nõnda raske leida?<br>
+        Tahaks tantsida apelsinimajja.<br>
+        Õnn on see kui leiad oma Jambalaya.<br>
+        <br>
+        Nüüd jäänud oli veel ehk mõni samm mu sihti<br>
+        kui äkki tuhmus kõik ja olin jälle üksi.<br>
+        Nii ei jõudnudki ma apelsinimajja<br>
+        kuhu kadus ta siis, oo Jambalaya<br>
+        <br>
+        Jambalay' miks küll ilmsi sind ei leia?<br>
+        Kas ehk teed su juurde nõnda raske leida?<br>
+        Tahaks tantsida apelsinimajja.<br>
+        Õnn on see kui leiad oma Jambalaya.<br>
+        <br>        
+    </div>
+    <div id="song16" class="song-text" style="display:none"> <h3 class="song-title"> Apelsin - Karulaul</h3>
+        <br>
+        Karu elab loomaaias<br>
+        Matsakas ja muidu maias<br>
+        Ja nii kõmbib ta aina<br>
+        Umpa umpa ….<br>
+        <br>
+        Metsas karu pole näha<br>
+        Metsas on tal külm ja paha<br>
+        Ja nii müttab ta aina<br>
+        Müta müta …<br>
+        <br>
+        Loomaaeda tahan ma<br>
+        Karu kaissu tuduma<br>
+        Kahekesi sööks<br>
+        Seal kommi päevad ööd<br>
+        <br>
+        Tule tule tule tule<br>
+        Tule tule tule tule sa<br>
+        Nüüd loomaaeda ühes minuga<br>
+        Egas keegi karda karu<br>
+        Karul mitme mehe aru<br>
+        Jõudu jaksu ülearu<br>
+        <br>
+        Ah hahaa ….<br>
+        <br>
+        Karu silmad on kui sulakuld<br>
+        Sealt lõõskab inimarmastuse tuld<br>
+        Peab mõni koera ja mõni mees kassi<br>
+        Mõni peab ahvi kes elab tal sahvris<br>
+        Mina ainult karu armastan<br>
+        <br>
+        Ah hahaa …<br>
+        <br>
+        Mõmm!<br>
+        <br>
+        Tule tule tule tule<br>
+        Tule tule tule tule sa<br>
+        Mu unedesse karukene hea<br>
+        Unes karu ilmuski<br>
+        Loomaaiapiletit<br>
+        Minult ta ei nõudnudki<br>
+        <br>
+        Ah hahaa…<br>
+        <br>
+        Ai - ai - jaa …<br>
+        Peab mõni koera ja mõni mees kassi<br>
+        Mõni peab ahvi kes elab tal sahvris<br>
+        Mina ainult karu armastan<br>
+        <br>        
+    </div>
+    <div id="song17" class="song-text" style="display:none"> <h3 class="song-title"> Apelsin - Kodu ja ristikhein</h3>
+        <br>
+        Nii kohtan sind mu kodupaik<br>
+        üle pika aja taas.<br>
+        Mul jaamas vastas on mu ema ja mu isa.<br>
+        Mööda teed ma näen seal jookseb keegi,<br>
+        lehvib juus kui kuldne keeris<br>
+        ja ees on nurm kus lõhnab ristikhein.<br>
+        <br>
+        Seal mind rõõm siis võtab vastu,<br>
+        mu juurde noorus astub<br>
+        ja ees on nurm kus lõhnab ristikhein.<br>
+        <br>
+        On suvi ja puhkab tuul,<br>
+        ülal pilvi silm ei näe.<br>
+        Vaid vana pärnapuu meil annab veidi varju.<br>
+        Minu kõrval on seesama keegi<br>
+        kellel juus kui kuldne keeris<br>
+        ja meil on hea sest lõhnab ristikhein.<br>
+        <br>
+        Aga siis ma äkki ärkan<br>
+        mul virgub pilk ja ma märkan<br>
+        et nägin und vaid praegu<br>
+        on kõikjal minu ümber kivisein.<br>
+        <br>
+        Samas tean et koit ei ole kaugel,<br>
+        laman nii ei sule lauge.<br>
+        On toas mul nurm kus lõhnab ristikhein.<br>
+        <br>
+        Seal mind rõõm siis võtab vastu,<br>
+        mu juurde noorus astub.<br>
+        Ma tunnen kuidas lõhnab ristikhein<br>
+        <br>        
+    </div>
+    <div id="song19" class="song-text" style="display:none"> <h3 class="song-title"> Apelsin - Matkalaul</h3>
+        <br>
+        Seljakotid selga,<br>
+        koju jäägu tsumadan.<br>
+        Kikilips ja kaap<br>
+        oodaku oma aega veel.<br>
+        Mees ei ohte pelga,<br>
+        naine kodus kamandab.<br>
+        Kodust välja saab harva ju<br>
+        hea on olla teel.<br>
+        <br>
+        Paksu metsa vahel<br>
+        vastu tuleb karusid<br>
+        kaenlas mesitarusid<br>
+        piibutobid suus.<br>
+        Kuskil võsa vahel<br>
+        libahunte kohata<br>
+        võib ju õndsalt ohata<br>
+        emotsioon on uus.<br>
+        <br>
+        Kahekümnes sajand,<br>
+        näkineiud vete pääl<br>
+        kosekohinas<br>
+        kandled käes gaasimaskid peas.<br>
+        Õitsev ühismajand,<br>
+        murueide tütred sääl<br>
+        uutmistuhinas<br>
+        hangud käes, kunglarahva seas.<br>
+        <br>
+        Paksu metsa vahel<br>
+        vastu tuleb karusid<br>
+        kaenlas mesitarusid<br>
+        piibutobid suus.<br>
+        Kuskil võsa vahel<br>
+        libahunte kohata<br>
+        võib ju õndsalt ohata<br>
+        emotsioon on uus.<br>
+        <br>
+        Aga pärapõrgus<br>
+        vanamoodi mõtlejaid<br>
+        üksikuid on veel,<br>
+        mülkasse nende rada viib.<br>
+        Kohuta ei kõrgus<br>
+        tulevikku tõtlejaid,<br>
+        rõõmus meie meel,<br>
+        kolkasse tungib päiksekiir.<br>
+        <br>
+        Paksu metsa vahel<br>
+        vastu tuleb karusid<br>
+        kaenlas mesitarusid<br>
+        piibutobid suus.<br>
+        Kuskil võsa vahel<br>
+        libahunte kohata<br>
+        võib ju õndsalt ohata<br>
+        emotsioon on uus.<br>
+        <br>
+        Seljakotid selga,<br>
+        koju jäägu tsumadan.<br>
+        Kikilips ja kaap<br>
+        oodaku oma aega veel.<br>
+        <br>               
+    </div>
+    <div id="song20" class="song-text" style="display:none"> <h3 class="song-title"> Apelsin - Michelangelo</h3>
+        <br>
+        Olen püüdnud jätta pildi peale sinu näo,<br>
+        filme on mul palju, kuid õnnestunud pole need.<br>
+        Stiili ja teravust polegi neis,<br>
+        ja väärikas seal pole ükski profiil,<br>
+        kuid õnneks on mul üks mõte hea,<br>
+        ma istun, käes juba telefon:<br>
+        <br>
+        “Michelangelo, kas võid öelda sa,<br>
+        kõigi maalide kohta, kuidas loodi neid, mis on ajalooks saand?<br>
+        Michelangelo, vasta mulle sa,<br>
+        võid ehk tulla siia, kaasas molbert, ja mu sõpra maalida?”<br>
+        oo-oo-oo<br>
+        <br>
+        Näidata kui suudaks su naeratust ma kõigile,<br>
+        siis peaks mona lisa louvre´is sulle andma teed.<br>
+        Siis alles sinust saaks ükskord legend,<br>
+        ja minagi pidada kuulsaks saaks end,<br>
+        mu meister, vasta, kus oled sa,<br>
+        no miks küll ei helise telefon?<br>
+        <br>
+        „Michelangelo, kas võid öelda sa,<br>
+        kõigi maalide kohta, kuidas loodi neid, mis on ajalooks saand?<br>
+        Michelangelo, vasta mulle sa,<br>
+        võid ehk tulla siia, kaasas molbert, ja mu sõpra maalida?”<br>
+        oo-oo-oo, tši-tši-tši-tši, ha-haa, oo-oo-oo<br>
+        <br>
+        Siis alles sinust saaks ükskord legend,<br>
+        ja minagi pidada kuulsaks saaks end,<br>
+        mu meister, vasta, kus oled sa,<br>
+        no miks küll ei helise telefon?<br>
+        <br>
+        „Michelangelo, vasta mulle sa,<br>
+        Michelangelo, oo-oo-oo, vasta mulle sa,<br>
+        mi-mi-mi-mi-Michelangelo, oo-oo, vasta mulle sa,<br>
+        mi-mi-Michelangelo, oo-oo, vasta mulle sa,<br>
+        mi-mi-mi-mi-Michelangelo, mm-mm-Michelangelo…”<br>
+        <br>        
+    </div>
+    <div id="song29" class="song-text" style="display:none"> <h3 class="song-title"> Apelsin - See viis haaras mind</h3>
+        <br>
+        See viis haaras mind,<br>
+        see viis võlus mind,<br>
+        see viis võitis mind<br>
+        kui esmakordselt<br>
+        kuulsin laulmas sind.<br>
+        <br>
+        Sind nägin päiksena lavalt paistmas,<br>
+        sind terve saalitäis mõttes mõistmas,<br>
+        su laulu lõhna ja mõtet haistmas<br>
+        ainult ma ei mõistnud sind.<br>
+        <br>
+        Ka mina püüdsin sust aru saada,<br>
+        ei tahtnud teistest ma maha jääda,<br>
+        kuid laulu mõte läks minust mööda,<br>
+        ainult viisi jagas pea.<br>
+        <br>
+        See viis haaras mind,<br>
+        see viis võlus mind,<br>
+        see viis võitis mind<br>
+        kui esmakordselt<br>
+        kuulsin laulmas sind.<br>
+        <br>
+        Võib-olla laulsid sa armurõõmust,<br>
+        võib-olla väikesest veinisõõmust,<br>
+        võib-olla ühtegi mõttejäänust<br>
+        selles laulus polnud sees.<br>
+        <br>
+        Kui puuga oleks ma pähe saanud,<br>
+        ei ühtki sõna mul meelde jäänud,<br>
+        kuid sellest viisist ei küllalt saanud, -<br>
+        sina ise olid viis!<br>
+        <br>
+        See viis haaras mind,<br>
+        see viis võlus mind,<br>
+        see viis võitis mind<br>
+        kui esmakordselt<br>
+        kuulsin laulmas sind.<br>
+        <br>
+        Nüüd olen aastaid su kõrval käinud,<br>
+        su häid ja halbugi külgi näinud,<br>
+        ei ole siiski sust aru saanud,<br>
+        kõrvus ainult mul see viis.<br>
+        <br>
+        Su publikuks nüüd on toatäis lapsi,<br>
+        kes kuulavad sind nii vastutahtmist,<br>
+        ei ole roose, ei suurt aplausi,<br>
+        jäänud ainult on see viis.<br>
+        <br>
+        See viis haaras mind,<br>
+        see viis võlus mind,<br>
+        see viis võitis mind<br>
+        kui esmakordselt<br>
+        kuulsin laulmas sind.<br>
+        <br>        
+    </div>
+    <div id="song30" class="song-text" style="display:none"> <h3 class="song-title"> Apelsin - Shakespeare</h3>
+        <br>
+        Kord oli koolivend mul Ain<br>
+        Ain Kaalepi nimekaim.<br>
+        Kuid luulest huvitet ei olnud ta ei,<br>
+        vaid metafüüsikast innustust sai<br>
+        ja muudkui taldrikut keerutas pime loom<br>
+        ja tema ümber oli pime ruum,<br>
+        täis ammugi surnud suurmeeste hingi<br>
+        ja uudiseid nendelt välja ta pinnis.<br>
+        <br>
+        Oh ütle, Shakespeare, kes on su teosed loonud<br>
+        oh ütle Mozart, mis on su lemmiktoon<br>
+        võibolla Tolstoi sa oleks elada võinud veel veidi<br>
+        kõik on vait.<br>
+        Ütle Shakespeare, mis arvad Peeter Brook'ist<br>
+        ütle Schubert, Kas ilus linn on see Viin?<br>
+        ütle Chaplin, kas kandsid toasusse?<br>
+        Öelge Henry Ford, Salvadore Dali,<br>
+        öelge, miks te küll ei vasta?<br>
+        <br>
+        Ja minu koolivend, see Ain,<br>
+        see õige veidrate ja omamoodi kaim<br>
+        jäi pisut nukraks et ei vastand tal tol õhtul ükski vaim,<br>
+        kuid siiski meelt ei heitnud.<br>
+        mis sest et mõni suurvaim oli pugend peitu<br>
+        on teisi palju,ta lohutas end nii<br>
+        jah teeme proovi, mis mehed on need<br>
+        ja küll sa mul Shakespeare häälti veel teed.<br>
+        <br>
+        Oh ütle Churchill, miks kandsik kikilipsu?<br>
+        Ütle Hendrix oma nõksud kõik,<br>
+        Ütle Batman, kas sul ka oma Mann on,<br>
+        kõik on siiski vait.<br>
+        Stett Garasin, miks neiul surra lasid,<br>
+        Oscar Wilde', kas tundsid sa Tšaikovskit,<br>
+        Miks Napoleon, sa võidud käest siis lasid,<br>
+        ütle Picasso, Fernandel, Ali Baba,<br>
+        miks te küll ei vasta.<br>
+        <br>
+        Tundus, et veidi kardin vist liikus<br>
+        nüüd viimaks ometi selgub kõik.<br>
+        Gershwin, Schumacher, Newton ja Raspurtin<br>
+        sisse on tulemas suur suur seltskond<br>
+        <br>
+        Oh ütle Shakespeare, kes on su teosed loonud<br>
+        oh ütle Mozart, mis on su lemmiktoon<br>
+        võibolla Tolstoi sa oleks elada võinud veel veidi<br>
+        kõik on vait<br>
+        Ütle Shakespeare, mis arvad Peeter Brooke'ist<br>
+        ütle Schubert, Kas ilus linn on see Viin?<br>
+        ütle Chaplin, kas kandsid toasusse?<br>
+        Öelge Henry Ford, Salvadore, Dali,<br>
+        öelge, miks te küll ei vasta.<br>
+        <br>
+        Nõnda hüüdis mu koolivend,<br>
+        toanurgast vastu piiksus hiir vaid<br>
+        piiksus hiir vaid, piiksus hiir vaid.<br>
+        <br>
+        Nõnda hüüdis mu koolivend,<br>
+        toanurgast vastu piiksus hiir vaid<br>
+        <br>        
+    </div>
+    <div id="song31" class="song-text" style="display:none"> <h3 class="song-title"> Apelsin - Sisemine ilu</h3>
+        <br>
+        Ära ütle, et ma olen vilets mees.<br>
+        Kui sa seda ainult tahad,<br>
+        homme õhtuks lebab kuu su jalge ees.<br>
+        Ja kui sellest veel on vähe,<br>
+        siis ülikooli astronoomiat<br>
+        vapralt õppima ma lähen,<br>
+        kõige ilusamad tähed sulle toon.<br>
+        <br>
+        Ära ütle, et ma olen vilets mees.<br>
+        Kui sa ainult veidi vihjad,<br>
+        homme õhtuks on sul auto ukse ees.<br>
+        Ja kui sellest veel ei piisa,<br>
+        siis merekoolis õpin kapteniks.<br>
+        Hangin vänge välisviisa,<br>
+        kõige ilusamad hilbud sulle toon.<br>
+        <br>
+        Nii see elu päevastpäeva läeb.<br>
+        Tähistaevas jäänud hõredaks.<br>
+        Kuu on alla võetud,<br>
+        tükikesteks saetud,<br>
+        pimedus teeb elu kõhedaks.<br>
+        <br>
+        Ära ütle, et ma olen vilets mees.<br>
+        Kui sa seda ainult soovid,<br>
+        homme õhtuks on mu süda sinu peos.<br>
+        Ja kui sellest veel ei mõika,<br>
+        kirurgiks kohe hakkan õppima.<br>
+        Ennast õrnalt lõikan,<br>
+        oma sisemise ilu sulle toon.<br>
+        <br>
+        Nii see elu päevastpäeva läeb.<br>
+        Tähistaevas jäänud hõredaks.<br>
+        Kuu on alla võetud,<br>
+        tükikesteks saetud,<br>
+        pimedus teeb elu kõhedaks.<br>
+        <br>        
+    </div>
+    <div id="song35" class="song-text" style="display:none"> <h3 class="song-title"> Apelsin - Viis viimast</h3>
+        <br>
+        Andeks, kas teil on veel ruumi?<br>
+        Ei, kõik on täis!<br>
+        <br>
+        Tähtsaid mehi täis on poodium,<br>
+        jaa, kõik on täis.<br>
+        <br>
+        Mulle pole kohta loodud,<br>
+        jaa, hiljaks jäid;<br>
+        kõikjal, kus on rahvast reas,<br>
+        seisan viimse viie seas,<br>
+        ootan, millal taandub kord<br>
+        pikk järjekord.<br>
+        <br>        
+        Viis viimast on meelest läinud sootuks,<br>
+        nad iialgi ei kutsuta lauda,<br>
+        viis viimast ei kaota siiski lootust<br>
+        ja nii nad võivad rõõmsasti laulda,<br>
+        viis viimast on meelest läinud sootuks,<br>
+        neid iialgi ei kutsuta lauda,<br>
+        Viis viimast ei kaota siiski lootust<br>
+        ja nii nad võivad rõõmsasti laulda.<br>
+        Hei, küll ükskord saabub aeg,<br>
+        hehehei, hei, las liigub järjekord.<br>
+        <br>
+        Kord kui uni vaevab silma,<br>
+        jaa, aeg on käes.<br>
+        Kõik on rännul teise ilma,<br>
+        jaa, eks me näe,<br>
+        kaste nõuab rahvas reas,<br>
+        seisan viimse viie seas,<br>
+        kaugelt kandub ninna<br>
+        kõhn meelespea lõhn.<br>
+        <br>
+        Viis viimast on meelest läinud sootuks,<br>
+        nad iialgi ei kutsuta lauda,<br>
+        viis viimast ei kaota siiski lootust<br>
+        ja nii nad võivad rõõmsasti laulda,<br>
+        viis viimast on meelest läinud sootuks,<br>
+        neid iialgi ei kutsuta lauda,<br>
+        Viis viimast ei kaota siiski lootust<br>
+        ja nii nad võivad rõõmsasti laulda.<br>
+        Hei, küll ükskord saabub aeg,<br>
+        hehehei, hei, las liigub järjekord.<br>
+        <br>
+    </div>
+    <div id="song25" class="song-text" style="display:none"> <h3 class="song-title"> Metsatöll - Oma laulu ei leia ma üles</h3>
+        <br>
+        Üle vainude valendav aur,<br>
+        vahulillede udune voodi…<br>
+        Igaühel on südamelaul,<br>
+        igaühel on see isemoodi.<br>
+        <br>
+        Laa-laa-la-la-la-laa,<br>
+        Laa-laa-la-la-la-laa.<br>
+        <br>
+        Lähen karjateed, karukell käes,<br>
+        kutsun hiliseid laule ma koju<br>
+        ja nad tulevad männikumäelt,<br>
+        kõige viimane udus veel ujub.<br>
+        <br>
+        Laa-laa-la-la-la-laa,<br>
+        Laa-laa-la-la-la-laa.<br>
+        <br>
+        Minu laule vist teavad siin kõik,<br>
+        udus rippuvad kellukakannud,<br>
+        sest et kõik nad siit karjamaalt sõid,<br>
+        vaid üks vallatu plehku on pannud.<br>
+        <br>
+        Laa-laa-la-la-la-laa,<br>
+        Laa-laa-la-la-la-laa.<br>
+        <br>
+        Üle vainude valendav aur,<br>
+        mul on närbunud karukell süles.<br>
+        Igaühel on siin oma laul<br>
+        ja ma oma ei leiagi üles.<br>
+        <br>
+        Laa-laa-la-la-la-laa,<br>
+        Laa-laa-la-la-la-laa.<br>
+        <br>        
+    </div>
+    <div id="song21" class="song-text" style="display:none"> <h3 class="song-title"> Uno Loop - Mis värvi on armastus</h3>
+        <br>
+        Su huultel nii värskelt kui juunis<br>
+        punetab maasikavärv;<br>
+        su juuksed on puravikpruunid,<br>
+        silmad kui sinine järv.<br>
+        Neid värve ma näen, neid värve ma tean,<br>
+        neist laulugi kokku sean ...<br>
+        <br>
+        Kuid mis värvi on armastus,<br>
+        kes seda teab?<br>
+        Mis värvi on armastus?<br>
+        Kui teaks küll oleks hea!<br>
+        Su aknad maaliksin kohe just seda värvi ma,<br>
+        et iga päev mu armastust<br>
+        siis näeksid sa, siis näeksid sa.<br>
+        <br>
+        Mürkkollaseks muudab mind ootus,<br>
+        sinuta maailm on hall,<br>
+        vaid igatsust leevendav lootus<br>
+        särab kui hõbekristall.<br>
+        Neid värve ma näen, neid värve ma tean,<br>
+        neist laulugi kokku sean ...<br>
+        <br>
+        Kuid mis värvi on armastus,<br>
+        kes seda teab?<br>
+        Mis värvi on armastus?<br>
+        Kui teaks küll oleks hea!<br>
+        Su aknad maaliksin kohe just seda värvi ma,<br>
+        et iga päev mu armastust<br>
+        siis näeksid sa, siis näeksid sa.<br>
+        <br>
+        Öö purjetab mustaval laeval,<br>
+        tuleb siis päev, mul näib,<br>
+        et roosaka pintsliga taevast,<br>
+        värvimas koidukiir käib.<br>
+        Neid värve ma näen, neid värve ma tean,<br>
+        neist laulugi kokku sean …<br>
+        <br>
+        Kuid mis värvi on armastus,<br>
+        kes seda teab?<br>
+        Mis värvi on armastus?<br>
+        Kui teaks küll oleks hea!<br>
+        Su aknad maaliksin kohe just seda värvi ma,<br>
+        et iga päev mu armastust<br>
+        siis näeksid sa, siis näeksid sa.<br>
+        <br>        
+    </div>
+    <div id="song23" class="song-text" style="display:none"> <h3 class="song-title"> Voldemar Kuslap - Mustamäe valss</h3>
+        <br>
+        Elasin ärklitoas üheskoos ämmaga,<br>
+        õnn tahtis pageda käest.<br>
+        Päeval ja ööl, kodus ja tööl<br>
+        mõtlesin Mustamäest.<br>
+        <br>
+        Nüüd elan Mustamäel,<br>
+        korter on aus ja hea<br>
+        ning selle õnne eest<br>
+        Fortunat kiitma pean.<br>
+        Nüüd elan Mustamäel –<br>
+        tahta mis võiksin veel!<br>
+        Hulk päevi kauneid siin<br>
+        mind ootab, ootab ees.<br>
+        <br>
+        Naabrite rõõmudes olen nüüd osanik,<br>
+        olgu seal pidu või pulm –<br>
+        igavust ma tunda ei saa<br>
+        enne, kui kell on kolm.<br>
+        <br>
+        Nüüd elan Mustamäel,<br>
+        korter on aus ja hea<br>
+        ning selle õnne eest<br>
+        Fortunat kiitma pean.<br>
+        Nüüd elan Mustamäel –<br>
+        tahta mis võiksin veel!<br>
+        Hulk päevi kauneid siin<br>
+        mind ootab, ootab ees.<br>
+        <br>
+        Kui nüüd veel Mustamäe Žiguli kandiga<br>
+        sõpruse sidemed looks,<br>
+        võib-olla nii minagi siis<br>
+        auto veel majja tooks.<br>
+        <br>
+        Nüüd elan Mustamäel,<br>
+        korter on aus ja hea<br>
+        ning selle õnne eest<br>
+        Fortunat kiitma pean.<br>
+        Nüüd elan Mustamäel –<br>
+        tahta mis võiksin veel!<br>
+        Hulk päevi kauneid siin<br>
+        mind ootab, ootab ees.<br>
+        <br>        
+    </div>
+    <div id="song28" class="song-text" style="display:none"> <h3 class="song-title"> Georg Ots - Saaremaa valss</h3>
+        <br>
+        Seal laupäevaõhtuselt lõhnavad kased,<br>
+        kui nendesse vajutad hõõguva näo,<br>
+        ja pühapäev hinges sind uskuda laseb,<br>
+        et õnne vaid kauguses kukuvad käod.<br>
+        <br>
+        Oh, keeruta, lennuta, linalakk-neidu,<br>
+        kel silmist nii kelmikaid sädemeid lööb!<br>
+        Ei sellist küll maailmas kusagil leidu<br>
+        kui Saaremaa heinamaal juunikuu ööl.<br>
+        <br>
+        Ning hämaras toomepuu lumena valev<br>
+        on sinule hõiskavaid ööbikuid täis.<br>
+        Miks muidu su huuled ja õhetav pale<br>
+        nii õunapuu õiele sarnane näib!<br>
+        <br>
+        Oh, keeruta, lennuta, linalakk-neidu,<br>
+        kel silmist nii kelmikaid sädemeid lööb!<br>
+        Ei sellist küll maailmas kusagil leidu<br>
+        kui Saaremaa heinamaal juunikuu ööl.<br>
+        <br>
+        Oi, Saaremaa niitude kastesed süled,<br>
+        öövaikuses lauludest helisev nurm!<br>
+        On pilvedest helendav taevas su üle<br>
+        ja kirgliku suudluse esmane hurm.<br>
+        <br>
+        Oh, keeruta, lennuta, linalakk-neidu,<br>
+        kel silmist nii kelmikaid sädemeid lööb!<br>
+        Ei sellist küll maailmas kusagil leidu<br>
+        kui Saaremaa heinamaal juunikuu ööl.<br>
+        <br>
+        Just sellisel heinamaal peamegi pidu,<br>
+        kus hämarik koidule ulatab käe.<br>
+        On kõikide mõtteid ja toiminguid sidund<br>
+        see tööde- ning rõõmudeküllane päev.<br>
+        <br>
+        Oh, keeruta, kudruta kavalat juttu,<br>
+        kuldtärniga nooruke sõjamees sa.<br>
+        Me ööd on nii valged ja kuluvad ruttu,<br>
+        et linalakk-neidu sa püüda ei saa.<br>
+        <br>        
+    </div>
+    <div id="song2" class="song-text" style="display:none"> <h3 class="song-title"> Rock Hotel - Aita mööda saata öö</h3>
+        <br>
+        Sõlmi juustest lahti pael<br>
+        heida põrandale see<br>
+        nagu leegi võbin lael<br>
+        veel mu kõrval leba sa<br>
+        <br>
+        Ära proovi leida und<br>
+        peagi hommik koitma lööb<br>
+        kingi mulle mõni tund<br>
+        aita mööda saata öö<br>
+        <br>
+        Olen halb või olen hea<br>
+        kohut mõistma sa ei pea<br>
+        võtku homme mind või saatan<br>
+        täna sõpra vajan ma<br>
+        <br>
+        Maha jäänud eilne päev<br>
+        homsed kellad veel ei löö<br>
+        kurb on see kui üksi jään<br>
+        aita mööda saata öö<br>
+        <br>
+        Olen halb või olen hea<br>
+        kohut mõistma sa ei pea<br>
+        võtku homme mind või saatan<br>
+        täna sõpra vajan ma<br>
+        <br>
+        Maha jäänud eilne päev<br>
+        homsed kellad veel ei löö<br>
+        kurb on see kui üksi jään<br>
+        aita mööda saata öö<br>
+        <br>        
+    </div>
+    <div id="song3" class="song-text" style="display:none"> <h3 class="song-title"> Tarmo Pihlap - Amarillo</h3>
+        <br>
+        Shal-la-laa-la-la-lal-la-lah<br>
+        <br>
+        Päike lõõmab taevas varju minna pole aega<br>
+        Aina annan gaasi puhtaks pühin tuuleklaasi<br>
+        Mõni miil veel jäänud – tühiasi on see:<br>
+        Juba tuntud käänud lõppemas on tee<br>
+        <br>
+        Teed mul näitab Amarillo<br>
+        Seal kus tükike päikesekillust<br>
+        Mul meeles vaid on Amarillo<br>
+        Seal kohtan neide kaunemaid<br>
+        <br>
+        Teed mul näitab Amarillo<br>
+        Seal kus tükike päikesekillust<br>
+        Mul meeles vaid on Amarillo<br>
+        Seal kohtan neide kaunemaid<br>
+        <br>
+        Shal-la-laa-la-la-lal-la-lah<br>
+        Kohtan neide kaunemaid<br>
+        <br>
+        Tee mul vastu helgib<br>
+        Lisan kiirust juurde veelgi<br>
+        Kindlalt hoian rooli<br>
+        Tõesti nüüd ma muust ei hooli<br>
+        <br>
+        Aina vaatan teele<br>
+        Ei suikuda saa<br>
+        Mind ei peata keegi<br>
+        Reis on lõppemas<br>
+        <br>
+        Teed mul näitab Amarillo<br>
+        Seal kus tükike päikesekillust<br>
+        Mul meeles vaid on Amarillo<br>
+        Seal kohtan neide kaunemaid<br>
+        <br>
+        Teed mul näitab Amarillo<br>
+        Seal kus tükike päikesekillust<br>
+        Mul meeles vaid on Amarillo<br>
+        Seal kohtan neide kaunemaid<br>
+        <br>
+        Shal-la-laa-la-la-lal-la-lah<br>
+        Kohtan neide kaunemaid<br>
+        <br>        
+    </div>
+    <div id="song4" class="song-text" style="display:none"> <h3 class="song-title"> Radar - Besame mucho</h3>
+        <br>
+        Külmadest talvedest isu sai otsa<br>
+        ja lõunasse asusin teele.<br>
+        Päev päikest täis – kõik kaunis näis.<br>
+        Kohtasin tüdrukut tumedasilmset,<br>
+        kes kõneles võõramaa keeles …<br>
+        Kaks sõna vaid mul tuntuks said.<br>
+        <br>
+        Besame mucho –<br>
+        maailma veetlevaim viis tundus see siis.<br>
+        Besame mucho –<br>
+        „suudle, ah suudle mind veel” – tähendas see.<br>
+        <br>
+        Rännud said otsa ja tagasi olen ma<br>
+        ammugi kodustel teedel.<br>
+        Nüüd juba tean – vaid siin on hea.<br>
+        Palju läks kaduma aegade rutus,<br>
+        kuid miski on siiani meeles –<br>
+        kaks silma suurt, kaks punahuult.<br>
+        <br>
+        Besame mucho –<br>
+        maailma veetlevaim viis tundus see siis.<br>
+        Besame mucho –<br>
+        „suudle, ah suudle mind veel” – tähendas see.<br>
+        <br>        
+    </div>
+    <div id="song6" class="song-text" style="display:none"> <h3 class="song-title"> Heli Lääts - Ei me ette tea</h3>
+        <br>
+        Kui olin väike tütarlaps,<br>
+        kas kasvan suureks? küsisin siis.<br>
+        Ja kas siis suurelt<br>
+        kuulsaks ma saan?<br>
+        Ema mul ütles nii:<br>
+        <br>
+        Ei me ette tea,<br>
+        mis elu meil tuua võib.<br>
+        Kuid ometi see, mis peab,<br>
+        tuleb kindlalt kõik,<br>
+        tuleb kindlalt kõik...<br>
+        <br>
+        Möödusid aastad, saabus aeg,<br>
+        mil süda tunda armastust sai.<br>
+        Kas on kõik päevad<br>
+        päikest meil täis?<br>
+        Armsam mull' ütles vaid:<br>
+        <br>
+        Ei me ette tea,<br>
+        mis elu meil tuua võib.<br>
+        Kuid ometi see, mis peab,<br>
+        tuleb kindlalt kõik,<br>
+        tuleb kindlalt kõik...<br>
+        <br>
+        Nüüd, kus mul endal lapsed on,<br>
+        küsivad nemad, mis saab kord meist.<br>
+        Kas on me elu<br>
+        rõõmus ja hea?<br>
+        Õrnalt ma räägin neil':<br>
+        <br>
+        Ei me ette tea,<br>
+        mis elu meil tuua võib.<br>
+        Kuid ometi see, mis peab,<br>
+        tuleb kindlalt kõik,<br>
+        tuleb kindlalt kõik...<br>
+        <br>        
+    </div>
+    <div id="song7" class="song-text" style="display:none"> <h3 class="song-title">Jüri Makarov - Ei meelest läe mul iial</h3>
+        <br>
+        Ei meelest läe mul iial<br>
+        Le Havre’i kuumad ööd.<br>
+        Ei meelest läe see piiga,<br>
+        kel silmad justkui söed.<br>
+        Seal rüübatud sai viskit<br>
+        meil muret polnud miskit,<br>
+        sest noor ma olin siis ja veri kuum.<br>
+        <br>
+        Ahhoi, ahhoi, sest noor ma olin siis!<br>
+        Ahhoi, ahhoi ja veri oli kuum!<br>
+        <br>        
+        <p>
+            Laul kõlas 1968. aastal valminud filmis "Mehed ei nuta".            
+            <p>
+                <style>
+                    h1 {
+                      font-size: 15px;
+                    }
+                    p {
+                      font-size: 15px;
+                      float: right;
+                      width: 100%;
+                    }
+                  </style>
+                  </div>
+    <div id="song8" class="song-text" style="display:none"> <h3 class="song-title"> Ei ole üksi ükski maa</h3>
+        <br>
+        Jääb ikka nii, et Saaremaa<br>
+        näeb õhtupäikse õitsemist.<br>
+        Ta kõrval tunneb Hiiumaa<br>
+        üht õiget sugu õitsilist.<br>
+        Veel linnupesi Läänemaal<br>
+        võib leida rannaroost,<br>
+        veel aru annab Harjumaa<br>
+        me rahva sünniloost.<br>
+        <br>
+        Ei taha, ei või, ei saa sind jätta, Virumaa!<br>
+        <br>
+        Teab loodus vaid, teab isamaa –<br>
+        meil tuleb üksteist aidata …<br>
+        Ei ole üksi ükski maa,<br>
+        ei taha, ei saa sind jätta, Virumaa!<br>
+        <br>
+        Ei ole jännis Järvamaa,<br>
+        kui seemne ootel põld on must.<br>
+        Ei peleta meid Pärnumaa<br>
+        jutt põlislaande eksinust.<br>
+        Kas tarkust toitev Tartumaa<br>
+        teab, mis on mehemeel?<br>
+        Kui kaua suudab Võrumaa<br>
+        end hoida õigel teel?<br>
+        <br>
+        Ei taha, ei või, ei saa sind jätta, Virumaa!<br>
+        <br>
+        Teab loodus vaid, teab isamaa –<br>
+        meil tuleb üksteist aidata …<br>
+        Ei ole üksi ükski maa,<br>
+        ei taha, ei saa sind jätta, Virumaa!<br>
+        <br>
+        Kas jääb ka nii, et Mulgimaa<br>
+        eal pügada ei lase end?<br>
+        Kas vaikust valvav Valgamaa<br>
+        on hüüdjatega ühinend?<br>
+        Kui puhtaks jäävad Virumaal<br>
+        kõik selge veega allikad,<br>
+        siis alles julgen ütelda,<br>
+        et elan omal maal.<br>
+        <br>
+        Teab loodus vaid, teab isamaa –<br>
+        meil tuleb üksteist aidata …<br>
+        Ei ole üksi ükski maa,<br>
+        ei taha, ei saa sind jätta, Virumaa!<br>
+        <br>        
+        <p>
+            Laulu tekst kõneleb Eesti ühtsusest fosforiidisõja kontekstis.<br>
+            Laulu eeskujuks oli singel "We Are the World".<br>
+            <p>
+                <style>
+                    h1 {
+                      font-size: 15px;
+                    }
+                    p {
+                      font-size: 15px;
+                      float: right;
+                      width: 100%;
+                    }
+                  </style>
+            </div>  
+    </div>
+    <div id="song9" class="song-text" style="display:none"> <h3 class="song-title"> Modern Fox - Helmi</h3>
+        <br>
+        Helmi, mulle õpeta,<br>
+        kuidas saaks kord minust tantsija,<br>
+        sest on vallanud mind džässirütm<br>
+        ja see võluv muusika.<br>
+        <br>
+        Helmi, mulle näita vaid,<br>
+        mõni moodne samm kuis foksis käib –<br>
+        paarist sammust peaks ju aitama,<br>
+        et ma võiksin tantsida.<br>
+        <br>
+        Ja kui kõlab me lemmikviis,<br>
+        tantsima sinu siis viin.<br>
+        Maailm siis kaob ja paradiis<br>
+        avatud meile on siis.<br>
+        <br>
+        Helmi, mulle õpeta,<br>
+        kuidas saaks kord minust tantsija,<br>
+        sest on vallanud mind džässirütm<br>
+        ja mind võlunud sa.<br>
+        <br>        
+    </div>
+    <div id="song11" class="song-text" style="display:none"> <h3 class="song-title"> Vello Orumets - Hüvasti, Maria</h3>
+        <br>
+        Vaata, Maria, jääb seltsiks sul päikene<br>
+        ja selgem taevas, kui see, mis ootab mind.<br>
+        Siiski, Maria, ka siin võib tulla äikest veel<br>
+        Ja sellepärast, ma palun, hoia end.<br>
+        <br>
+        Kui ootad kirja, siis homseks jäta pisarad.<br>
+        Kiri, Maria, võib kaua olla teel.<br>
+        Kui ootad kirja , võib tulla see ka mulla alt,<br>
+        kuid ära usu, et saatmata jäi see.<br>
+        <br>
+        Kui me ei kohtu, jää terveks, Maria!<br>
+        Meid lahku viia võib igavene öö.<br>
+        Mis ka ei juhtuks, pea meeles, Maria,<br>
+        All sinu südant me poja süda lööb.<br>
+        <br>
+        Maailmas niigi on liiga palju nutetud.<br>
+        Näib, et on pisar tulus väljamüük.<br>
+        Ma tean, Maria, kui armastust on petetud,<br>
+        siis meie hinged ei kanna seda süüd.<br>
+        <br>
+        Kui me ei kohtu, jää terveks, Maria!<br>
+        Meid lahku viia võib igavene öö.<br>
+        Mis ka ei juhtuks, pea meeles, Maria,<br>
+        All sinu südant me poja süda lööb.<br>
+        <br>
+        Maailmas niigi on liiga palju nutetud.<br>
+        Näib, et on pisar tulus väljamüük.<br>
+        Ma tean, Maria, kui armastust on petetud,<br>
+        siis meie hinged ei kanna seda süüd.<br>
+        <br>
+        Kui ootad kirja, siis homseks jäta pisarad.<br>
+        Kiri, Maria, võib kaua olla teel.<br>
+        Kui ootad kirja , võib tulla see ka mulla alt,<br>
+        kuid ära usu, et saatmata jäi see.<br>
+        <br>
+        Vaata, Maria, jääb seltsiks sul päikene<br>
+        ja selgem taevas, kui see, mis ootab mind.<br>
+        Siiski, Maria, ka siin võib tulla äikest veel<br>
+        Ja sellepärast, ma palun, hoia end.<br>
+        <br>        
+    </div>
+    <div id="song13" class="song-text" style="display:none"> <h3 class="song-title"> Vennaskond - Insener Garini hüperboloid</h3>
+        <br>
+        Öö on siin soe, veidi rõske ja soe<br>
+        Miski ei loe, mitte miski ei loe<br>
+        <br>
+        Minu ees laual on hüperboloid<br>
+        Insener Garini hüperboloid<br>
+        Insener Garini hüperboloid. Hüperboloid<br>
+        <br>
+        Pimestav kiir<br>
+        Silmipimestav kiir<br>
+        Tunnete piir<br>
+        Meie tunnete piir<br>
+        See on ju hukatus hüperboloid ...<br>
+        Insener Garini hüperboloid<br>
+        Insener Garini hüperboloid. Hüperboloid<br>
+        <br>
+        Unistav sarm<br>
+        Sinu unistav sarm<br>
+        Zoja mu arm<br>
+        Minu Zoja mu arm<br>
+        See on ju igatsus hüperboloid ...<br>
+        Insener Garini hüperboloid<br>
+        Insener Garini hüperboloid. Hüperboloid<br>
+        <br>
+        Uinub Pariis<br>
+        Taas kui uinub Pariis<br>
+        Kohtume siis<br>
+        Siin kohtume siis<br>
+        See on ju armastus, hüperboloid ...<br>
+        Insener Garini hüperboloid<br>
+        Insener Garini hüperboloid. Hüperboloid<br>
+        <br>
+        Pealuuga lipp<br>
+        Surnupealuuga lipp<br>
+        Tunnuste tipp<br>
+        Sinu tunnuste tipp<br>
+        See on ju vabadus, hüperboloid ...<br>
+        Insener Garini hüperboloid<br>
+        Insener Garini hüperboloid. Hüperboloid<br>
+        <br>
+        Sinavad veed<br>
+        Vaikse ookeani veed<br>
+        Marmorpaleed<br>
+        Roosad marmorpaleed<br>
+        See on ju paradiis, hüperboloid ...<br>
+        Insener Garini hüperboloid<br>
+        Insener Garini hüperboloid. Hüperboloid<br>
+        <br>
+        Elu ja surm<br>
+        Meie elu ja surm<br>
+        Taevalik hurm<br>
+        Nõnda taevalik hurm<br>
+        See on ju igavik, hüperboloid ...<br>
+        Insener Garini hüperboloid<br>
+        Insener Garini hüperboloid. Hüperboloid<br>
+        <br>
+        Lumi on maas<br>
+        Siis kui lumi on maas<br>
+        Kohtume taas<br>
+        Siis me kohtume taas<br>
+        See on ju unistus, hüperboloid ...<br>
+        Insener Garini hüperboloid<br>
+        Insener Garini hüperboloid. Hüperboloid<br>
+        <br>        
+    </div>
+    <div id="song14" class="song-text" style="display:none"> <h3 class="song-title"> Fix - Jaanipäev</h3>
+        <br>
+        Jaanipäevaks kõrgeks kasvab rohi,<br>
+        rinnust saadik kõrgub kastehein.<br>
+        Ütle, kust ma rada teha tohin –<br>
+        igal pool on noor ja õitsev hein!<br>
+        <br>
+        Jaaniõhtul süüdatakse tuled,<br>
+        tantsuplatsil tallatakse hein.<br>
+        Aastas kord see õhtu ette tuleb –<br>
+        igal pool saab muserdatud hein.<br>
+        <br>
+        Jaaniööl on sõnajalad õites<br>
+        metsa all, kus kõrge-kõrge hein.<br>
+        Lapsed, lapsed, sinna minna võite –<br>
+        niikuinii seal niitmata jääb hein.<br>
+        <br>
+        Jaanipäeval rinnuni on rohi,<br>
+        sügis jõuab, jääb vaid kuluhein.<br>
+        Ütle, kust küll rada teha tohin –<br>
+        igal pool on noor ja õitsev hein!<br>
+        <br>        
+    </div>
+    <div id="song36" class="song-text" style="display:none"> <h3 class="song-title"> Tanel Padar - Parem veelgi</h3>
+        <br>
+        Hingele kohta otsides<br>
+        Ärgata tuleb kevadel<br>
+        Et vaikus saaks<br>
+        Uuesti muusikas<br>
+        Taas kõlama<br>
+        <br>
+        Tuulega kaasa lennates<br>
+        Kõrgelt on näha muutused<br>
+        Kõik tärkamas<br>
+        Parema meelega,<br>
+        Üks naeratab<br>
+        <br>
+        Linna kohal taas<br>
+        Jalad nüüd lõpuks puudutavad maad<br>
+        <br>
+        Olematut halvemaks ei tee<br>
+        Püüdlus olla parem veelgi<br>
+        Pimedust ei märka valguses<br>
+        Teadma pead, on algus seegi<br>
+        Silmad kui hingepeeglid<br>
+        Ilusas näos<br>
+        <br>
+        Kasvanud suureks muutustest<br>
+        Elu on haaran’d endasse<br>
+        Nüüd lendame<br>
+        Edasi üheskoos<br>
+        Me lendame<br>
+        <br>        
+    </div>
+    <div id="song37" class="song-text" style="display:none"> <h3 class="song-title"> Tanel Padar - Tartust Pariis</h3>
+        <br>
+        Alles mul paitasid pead<br>
+        Kaunis naeratus huulil<br>
+        Sai tundma me mõlema meel<br>
+        Et me hinged on peeglid<br>
+        <br>
+        Sammudes käsi Su käes<br>
+        Aina kindlamalt teadsin<br>
+        Et esimese suudluseni<br>
+        jäänud vaid mõned meetrid<br>
+        <br>
+        On peatund kõik me ümber, teisi teel ei märka<br>
+        On meeldiv see mis meis nüüd tärkab<br>
+        <br>
+        Sai sellel õhtul Tartust Pariis<br>
+        Armastuse linn oma hiilguses<br>
+        Sai sellel õhtul Tartust Pariis<br>
+        Kus need eksinud armusid<br>
+        <br>
+        Tunded on ärganud meis<br>
+        Tobe naeratus huulil<br>
+        Kindel on mõlema meel<br>
+        Et me hinged on peeglid<br>
+        <br>
+        On peatund kõik me ümber, teisi teel ei märka<br>
+        On parim see mis meis nüüd tärkab<br>
+        <br>        
+    </div>
+    <div id="song38" class="song-text" style="display:none"> <h3 class="song-title"> Tanel Padar - Soovin head</h3>
+        <br>
+        Palju paremad päevad on alles ees<br>
+        Seda nüüd tea<br>
+        Kõik need segased tunded lõpuni selgemaks saad<br>
+        Kuhu edasi viib edasi viib<br>
+        edasi viib Sind lõpuks valgusekiir<br>
+        Kuula ära mind Sa<br>
+        Avan Sulle end taas<br>
+        Kuula ära mind Sa<br>
+        <br>
+        Nüüd mul aeg on teele asuda<br>
+        Ole hea lase lahti käest<br>
+        Nagu raamat ilma lõputa tunnen end kui siia jään<br>
+        Tean Sul haiget teen ja endale ka<br>
+        Kuid nüüd minema ma pean<br>
+        Sinu peatükk selles raamatus oleks lihtsalt liiga hea<br>
+        <br>
+        Sinu mõtetes olla võin teine mees<br>
+        Ennast teisiti tean<br>
+        See suhe vaid võõraks muudab meid meie mõlema jaoks<br>
+        Sind hoida ei saa<br>
+        Hoida ei saa<br>
+        Enam ei saa olla sinuga<br>
+        Kuula ära mind Sa<br>
+        Ennast minema sean<br>
+        Soovin Sulle vaid head<br>
+        <br>        
+    </div>
+    <div id="song39" class="song-text" style="display:none"> <h3 class="song-title"> Tanel Padar - Veel ja veel</h3>
+        <br>
+        Suuri silmi vaatan valgeid pabereid<br>
+        ma ei saa ju alla kirjutada neid<br>
+        Alles siis kui kõik need joonistatud täis<br>
+        Sina ütled, sai sest laul või mulle näis<br>
+        <br>
+        Poole kuuene<br>
+        liiga varane oli veel<br>
+        tuleb järgmine<br>
+        soovin endale<br>
+        nüüd head teed<br>
+        <br>
+        Mööda raudseid soove lendab rong<br>
+        See mis olnud, pagasis kaasas on<br>
+        Pilvetolmust karged laulud suul<br>
+        Kergel meelel mu süda ootab tuult<br>
+        <br>
+        Kardan kirbet vingu kui ei paista tuld<br>
+        Raiub minevikku aastaid iga tund<br>
+        Ilmad heitlikud on meil ja see on hea<br>
+        Sest nii põhjust tulla otsima ei pea<br>
+        <br>
+        Tahan veel ja veel<br>
+        Ennast anda ma<br>
+        Leegile<br>
+        <br>
+        Mööda raudseid soove lendab rong<br>
+        See mis möödas pagasis kaasas on<br>
+        Pilvetolmust karged laulud suul<br>
+        Kergel meelel mu süda ootab tuult<br>
+        <br>
+        Hõlmad valla longin Päikse puiesteel<br>
+        Kõik on jälle nii kui igal kevadel<br>
+        Pargi oksteil turnimas näen ühte last<br>
+        Tunnen, tuul toob koogi lõhnu Haljalast.<br>
+        <br>        
+    </div>
+    <div id="song40" class="song-text" style="display:none"> <h3 class="song-title"> Tanel Padar - Maagia</h3>
+        <br>
+        On avatud<br>
+        Lõputu aeg ja ruum<br>
+        Ja pöördunud<br>
+        on vabadust varjanud kuu<br>
+        Sa peagi näed,<br>
+        et tuulel on muutunud suund<br>
+        Ja oodata<br>
+        Lõpuks võid midagi muud<br>
+        <br>
+        Keera ennast allatuult<br>
+        See on sinu õige suund<br>
+        <br>
+        Kui julgus tiibu ringutab<br>
+        Ja uhkus tõstab pea<br>
+        Kõik soovitud soovid<br>
+        unelmaist välja kanda<br>
+        <br>
+        Ei ole loodud loobuma<br>
+        Sest lootus elab siin<br>
+        Ja soovitud soovid<br>
+        Endale kingiks saada<br>
+        <br>
+        Tavatu<br>
+        Lasta end maagiast priiks<br>
+        Et vabana kulgeda eemale siit<br>
+        <br>
+        Pööra ennast allatuult<br>
+        See on ainuõige suund<br>
+        <br>        
+    </div>
+    <div id="song41" class="song-text" style="display:none"> <h3 class="song-title"> Ott Lepland - Lõpmatuses</h3>
+        <br>
+        Nüüd muutnud me teed<br>
+        Tuul tormiks paisand veed<br>
+        Kael kange, kannad maas<br>
+        Siin me koht on sellel maal<br>
+        <br>
+        Kallab, isegi kui kallab<br>
+        me ei anna alla, on veri paksem veest<br>
+        <br>
+        Ses lõpmatuses<br>
+        Ma hüüan su poole sel tumeda taeva teel<br>
+        Siin lõpmatuses<br>
+        Ma hüüan Su poole ka heledas valguses<br>
+        Kõik uueks loo, loo, loo<br>
+        Hüüan su poole, hüüan su poole<br>
+        <br>
+        Torm jääb seisma raugeb tuul<br>
+        Tolmund tee on jäljetu<br>
+        Lootus pime alles jääb<br>
+        Hoidma usku oma käes<br>
+        <br>
+        Ses lõpmatuses<br>
+        Ma hüüan su poole sel tumeda taeva teel<br>
+        Siin lõpmatuses<br>
+        Ma hüüan Su poole ka heledas valguses<br>
+        Kõik uueks loo, loo, loo Hüüan su poole, hüüan su poole<br>
+        <br>
+        Me ei kaotada saa hetkegi<br>
+        Kogu maailm meie ees on laotund laiali<br>
+        Täna on see päev, kui taevalaotus selge taas<br>
+        Tähed joonduvad ja moodustavad read<br>
+        <br>
+        Ses lõpmatuses<br>
+        Ma hüüan su poole sel tumeda taeva teel<br>
+        Siin lõpmatuses<br>
+        Ma hüüan Su poole ka heledas valguses<br>
+        Kõik uueks loo, loo, loo<br>
+        Hüüan su poole, hüüan su poole<br>
+        <br>                
+    </div>
+    <div id="song42" class="song-text" style="display:none"> <h3 class="song-title"> Ott Lepland - Hommikud</h3>
+        <br>
+        Nüüd möödunud on aegu halbu, häid.<br>
+        Mul mõtetest on ikka läbi käind,<br>
+        Kas sellel teel veel võime kohtuda?<br>
+        Seda isegi ei tea<br>
+        <br>
+        On käidud teid, mis elu ette tõi.<br>
+        Me selles tuules lahkuda ei või,<br>
+        Kuid siiski võib veel palju muutuda.<br>
+        Seda isegi ei tea<br>
+        Kas on see nüüd halb või hea.<br>
+        <br>
+        Sinuga koos ma koidikul<br>
+        äratan üles hommikud.<br>
+        Muretu teekond ees,<br>
+        Nüüd aeg meil lendab käest.<br>
+        Käigu see maailm homsesse.<br>
+        Ei me jää seisma poolel teel,<br>
+        Suuname vaid pilgud tähistaevasse..<br>
+        <br>
+        Me avastame koos veel maailma.<br>
+        Meil sellest retkest hetkel küll ei saa.<br>
+        See teekond lühike võib tunduda<br>
+        Seda isegi ei tea<br>
+        Kas on see nüüd halb või hea.<br>
+        <br>
+        Sinuga koos ma koidikul<br>
+        äratan üles hommikud.<br>
+        Muretu teekond ees,<br>
+        Nüüd aeg meil lendab käest.<br>
+        Käigu see maailm homsesse.<br>
+        Ei me jää seisma poolel teel,<br>
+        <br>
+        Sinuga koos ma koidikul<br>
+        äratan üles hommikud.<br>
+        Muretu teekond ees,<br>
+        Nüüd aeg meil lendab käest.<br>
+        Käigu see maailm homsesse.<br>
+        Ei me jää seisma poolel teel,<br>
+        Suuname vaid pilgud tähistaevasse..<br>
+        <br>
+        Me seda näeme iga päev<br>
+        Koos loome hetki võluväel<br>
+        See kõik meil jääda võikski nii<br>
+        Alati<br>
+        <br>
+        Sinuga koos ma koidikul<br>
+        äratan üles hommikud.<br>
+        Muretu teekond ees,<br>
+        Nüüd aeg meil lendab käest.<br>
+        Käigu see maailm homsesse.<br>
+        Ei me jää seisma poolel teel,<br>
+        Suuname vaid pilgud tähistaevasse..<br>
+        <br>
+        Sinuga koos ma koidikul<br>
+        äratan üles hommikud.<br>
+        Muretu teekond ees,<br>
+        Nüüd aeg meil lendab käest.<br>
+        Käigu see maailm homsesse.<br>
+        Ei me jää seisma poolel teel,<br>
+        Suuname vaid pilgud tähistaevasse..<br>
+        <br>        
+    </div>
+    <div id="song43" class="song-text" style="display:none"> <h3 class="song-title"> Henry Laks - Õpetaja</h3>
+        <br>
+        Õpetaja vana muld ümber sai ta aeg<br>
+        Lausus sõnu nii kui kuld sügavaid kui kaev<br>
+        Oli kõhn ja vaikne mees tasane ja karm<br>
+        Tuli põles silmades hinges põles arm<br>
+        <br>
+        Teenis tõde lihtsat suurt julges olla see<br>
+        Kes ta oli selleks jäi aus ja vaba mees<br>
+        Rääkis otse selget keelt priiusest ei muust<br>
+        Paljud viha pidasid kui kuulsid tema suust<br>
+        <br>
+        Vabana võid käia püstipäi<br>
+        Vabana võid olla nii kui näib<br>
+        Vabana võid käia püstipäi<br>
+        See kes oled nüüd sa julge olla nii<br>
+        <br>
+        Õpetaja vana muld ümber sai ta aeg<br>
+        Lausus sõnu nii kui kuld sügavaid kui kaev<br>
+        Rääkis otse selget keelt priiusest ei muust<br>
+        Paljud viha pidasid kui kuulsid tema suust<br>
+        <br>
+        Vabana võid käia püstipäi<br>
+        Vabana võid olla nii kui näib<br>
+        Vabana võid olla nii kui näib<br>
+        See kes oled nüüd sa julge olla nii<br>
+        <br>        
+    </div>
+    <div id="song44" class="song-text" style="display:none"> <h3 class="song-title">Curly Strings - Kauges külas</h3>
+        <br>
+        Kauges külas, vanaema juures,<br>
+        elasin kord, kogu suve.<br>
+        Vanaema ja mu armas vanaisa,<br>
+        aga noorel neiul, neist ei piisa.<br>
+        <br>
+        Jooksen randa, koduküla randa,<br>
+        et saada pruuniks, teiseks juuniks.<br>
+        Võtan kaasa, reketid ja maki, kuid<br>
+        rannas on vaid üks võrku paikav papi.<br>
+        <br>
+        Siin kauges külas, teisi näinud pole veel.<br>
+        Tühi rand ja nõmmeliivatee.<br>
+        <br>
+        Siin ei ole, pangaautomaati,<br>
+        on vaid naati, palju naati.<br>
+        Pole noori, pole ühtki poodi.<br>
+        Miski pole, linna moodi<br>
+        <br>
+        Jooksen randa, koduküla randa,<br>
+        et saada pruuniks, teiseks juuniks.<br>
+        Siis on pidu, teise küla pidu<br>
+        Seal on noored, teised noored<br>
+        <br>
+        Siin kauges külas, teisi näinud pole veel<br>
+        Tühi rand ja nõmmeliivatee.<br>
+        <br>
+        Korraks vaatan, seljataha veel<br>
+        Tühi rand ja nõmmeliivatee<br>
+        Korraks vaatan, seljataha veel<br>
+        Tühi rand ja nõmmeliivatee<br>
+        <br>        
+    </div>
+    <div id="song45" class="song-text" style="display:none"> <h3 class="song-title">Muinaslugu muusikas</h3>
+        <br>
+        Kõik, mida mulle ütlesid tol õhtul,<br>
+        kui muusika mu hinges kõlab see…<br>
+        Nüüd, mil muusikat ma kuulma juhtun,<br>
+        meenud sina minule.<br>
+        <br>
+        Üht muinaslugu muusikas ma kuulen<br>
+        ja sina seisad unelmais mu ees.<br>
+        Ning laulmas iga tund ma leian end,<br>
+        sest muusika ja sa, ma mõlemasse armund.<br>
+        <br>
+        Teeb muusika mind vahel kurvameelseks<br>
+        ja süda on nii tulvil igatsust,<br>
+        et laulmas iga tund ma leian end,<br>
+        sest muusika ja sa, ma teisse armund.<br>
+        <br>
+        Olla nii ei või, kuigi seda räägivad kõik –<br>
+        kas tõesti on siis mõttetu see,<br>
+        kui igatsed kuud, mis särab läbi öö?<br>
+        <br>
+        Muusika ent siiski trööstib mind<br>
+        ja ütleb, et ma varsti kohtan sind.<br>
+        Nüüd laulmas iga tund ma leian end,<br>
+        sest muusika ja sa, ma teisse armund.<br>
+        <br>        
+    </div>
+    <div id="song46" class="song-text" style="display:none"> <h3 class="song-title">Desiree Mumm - Armastuse laul</h3>
+        <br>
+        Nii nagu pöörlev sõõr spiraalis,<br>
+        nagu ratas ratta sees...<br>
+        Pole algust, pole lõppu –<br>
+        veskitiib vaid ringe teeb<br>
+        nagu mäe pealt veerev lumi,<br>
+        nagu kirju õhupall,<br>
+        nagu karussell, mis tiirleb<br>
+        ümber kuu või pilve all.<br>
+        Pilgukaar, mis hetki nopib,<br>
+        kord on kitsas, kord on lai,<br>
+        kuid mu maailm nagu kaja<br>
+        ikka sama kordab vaid.<br>
+        Nagu armastuses tead<br>
+        käivad mõtted ringi peas...<br>
+        <br>
+        Nagu kutse, millest läbi<br>
+        eal ei kuma koidukiir,<br>
+        nagu udu, mille taga<br>
+        puudub selge silmapiir,<br>
+        nagu öö, mis hiilib kõikjal<br>
+        endal süda valu täis,<br>
+        on mu unelm, mille killud<br>
+        järve äärde maha jäid.<br>
+        Kell lööb järjest uusi tunde,<br>
+        vanad ammu päeviks said,<br>
+        kuid mu maailm nagu kaja<br>
+        ikka sama kordab vaid.<br>
+        Nagu armastuses reas<br>
+        käivad mõtted ringi peas...<br>
+        <br>
+        Nüüd on taskud õnnest tühjad,<br>
+        päike jälle väldib mind.<br>
+        Miks küll suvi möödus ruttu?<br>
+        Kas seal üldse nägin sind?<br>
+        Oli arm ja oli rõõm<br>
+        ja tuules vaikselt õõtsus paat.<br>
+        Tundes sind mu süda laulis<br>
+        kui romantiline plaat.<br>
+        Ja need pildid kaldaliivas,<br>
+        meie näod ja nimed seal –<br>
+        lained neist on üle käinud,<br>
+        nukrus istub kivi peal...<br>
+        Sest et sa ju läksid lennul,<br>
+        kui sai tühjaks suvekruus<br>
+        ja läks sügis seda värvi<br>
+        nagu oli sinu juus.<br>
+        <br>
+        Nagu pöörlev sõõr spiraalis,<br>
+        nagu ratas ratta sees...<br>
+        Pole algust, pole lõppu –<br>
+        veskitiib vaid ringe teeb.<br>
+        Minu elu pilt on see:<br>
+        nagu tuuleveskid reas<br>
+        käivad mõtted ringi peas...<br>
+        <br>        
+    </div>
+    <div id="song47" class="song-text" style="display:none"> <h3 class="song-title">Push Up - Ämblikmees</h3>
+        <br>
+        Olen su ämblikmees<br>
+        Oo mu ämblikmees<br>
+        Olen ämblikmees<br>
+        <br>
+        On üks mees, kas tead, kes täitsa segi ajand on mu pea<br>
+        Ahaa, kas laulad minust baby, oota nüüd veidi, varsti sinu olen ma<br>
+        Nagu pöörane ma ringi käin, mu keha aina erutust on täis<br>
+        Jah olen juba teel, meid nauding ootab ees, mõtteid on mul kuumi - häid<br>
+        <br>
+        Oo kallis, ole minu ämblikmees, mu juurde lenda üle maa ja vee<br>
+        Juba tulen, sest olen sinu järgi hull<br>
+        Oo tahan olla ainus sul<br>
+        Kallis, ole minu ämblikmees, mu juurde lenda üle maa ja vee<br>
+        Ou baby ei karda ma ei vett ega tuld<br>
+        Mu armas, olen sinu järgi hull<br>
+        <br>
+        Olen su ämblikmees<br>
+        Oo mu ämblikmees<br>
+        <br>
+        Kuula, kuidas hüüan "mind oma võrku püüa, ma ei suuda oodata"<br>
+        Kaua ootama sa ei pea, sest varsti, tea, su aknast sisse lendan ma<br>
+        Nüüd minuteid ma loen, mu voodi juba soe, tean, et kohe tuled sa<br>
+        Oo ei eksi sa, peagi olen seal ja südame sul purustan - ma!<br>
+        <br>
+        Oo kallis, ole minu ämblikmees, mu juurde lenda üle maa ja vee<br>
+        Juba tulen, sest olen sinu järgi hull<br>
+        Oo tahan olla ainus sul<br>
+        Kallis, ole minu ämblikmees, mu juurde lenda üle maa ja vee<br>
+        Ou baby ei karda ma ei vett ega tuld<br>
+        Mu armas, olen sinu järgi hull<br>
+        <br>
+        Oo kallis, ole minu ämblikmees, mu juurde lenda üle maa ja vee<br>
+        Juba tulen, sest olen sinu järgi hull<br>
+        Oo tahan olla ainus sul<br>
+        Kallis, ole minu ämblikmees, mu juurde lenda üle maa ja vee<br>
+        Ou baby ei karda ma ei vett ega tuld<br>
+        Mu armas, olen sinu järgi hull<br>
+        <br>
+        Oo kallis, ole minu ämblikmees, mu juurde lenda üle maa ja vee<br>
+        Juba tulen, sest olen sinu järgi hull<br>
+        Oo tahan olla ainus sul<br>
+        Kallis, ole minu ämblikmees, mu juurde lenda üle maa ja vee<br>
+        Ou baby ei karda ma ei vett ega tuld<br>
+        Mu armas, olen sinu järgi hull<br>
+        <br>
+        Oo kallis, ole minu ämblikmees, ole minu ämblikmees<br>
+        La - la - la - la - la - la - la - laa - la - laa<br>
+        Oo, kallis, ole minu ämblikmees, ole minu ämblikmees<br>
+        La - la - la - la - la - la - la - laa - la - laa <br>
+        <br>        
+    </div>
+    <div id="song48" class="song-text" style="display:none"> <h3 class="song-title">Ines - Iseendale</h3>
+        <br>
+        Koos, vaid tahan olla igal pool.<br>
+        Ei viitsi seigelda ja joosta seal,<br>
+        kus tulemust ei tea.<br>
+        <br>
+        Pool jääb maha vedelema.<br>
+        Pool jääb kasutamata,<br>
+        kui kaod, siis pean taas iseseisvuma.<br>
+        <br>
+        Niimoodi pooleldi on hea.<br>
+        Niimoodi aega kinni ei pea.<br>
+        Ei suuda teineteiseta.<br>
+        Ometi tean.<br>
+        <br>
+        Kõik, mis sa teed,<br>
+        teed kõik endale.<br>
+        Su ees on miljon teed.<br>
+        Vaid mõtle iseendale.<br>
+        <br>
+        Aeg on teha järldusi.<br>
+        Aeg on teha mõttetusi.<br>
+        Aeg on seal, kus tagasi ei saa.<br>
+        <br>
+        Öö saab olulisemaks kui päev.<br>
+        Ei taha raisata sind.<br>
+        Näen, et sa võid libiseda käest.<br>
+        <br>
+        Sinuta pooleldi on hea.<br>
+        Sinuta aega kinni ei pea.<br>
+        Ei suuda teineteiseta.<br>
+        Ometi tean.<br>
+        <br>
+        Kõik, mis sa teed,<br>
+        teed kõik endale.<br>
+        Su ees on miljon teed.<br>
+        Vaid mõtle iseendale.<br>
+        <br>
+        Kõik, mis sa teed.<br>
+        Teed kõik endale.<br>
+        Su sees on vastused.<br>
+        Su enda küsimustele.<br>
+        <br>
+        Huuuuuuuuuuu - uuuuuuuuuh.<br>
+        Huuuuuuuuuuu - uuuuuuuuuh.<br>
+        <br>
+        Kõik, mis sa teed,<br>
+        teed kõik endale.<br>
+        Su ees on miljon teed.<br>
+        Vaid mõtle iseendale.<br>
+        <br>
+        Kõik, mis sa teed,<br>
+        teed kõik endale.<br>
+        Su sees on vastused.<br>
+        Mmmmmm... .<br>
+        Su enda küsimustele.<br>
+        <br>        
+    </div>
+    <div id="song49" class="song-text" style="display:none"> <h3 class="song-title">Ines - 15 magamata ööd</h3>
+        <br>
+        Iseendale haiget<br>
+        Tegin teadlikult ma<br>
+        Lihtsalt proovisin õnne<br>
+        Kas sind endale saan<br>
+        Kas ma saan mida tahan<br>
+        Nagu harjunud ma<br>
+        Kõik see pidi lihtne olema<br>
+        <br>
+        Väikest hiirt ja kassi<br>
+        Mängisin nagu peab<br>
+        Sinna maani läks hästi<br>
+        Kuni langesin ma<br>
+        Kuni langesin lõksu<br>
+        Mille sinule ma<br>
+        Ise olin välja mõelnud, valmistand ja üles seadnud<br>
+        <br>
+        15 magamata ööd<br>
+        Olen sõdind endaga<br>
+        Teinud suurt ja julma tööd<br>
+        Et mu süda vabaks saaks<br>
+        15 magamata ööd<br>
+        Olen palund ennast ma<br>
+        Kuid sust lahti ma ei saa<br>
+        <br>
+        Hing on haige ja puru<br>
+        Uluks valust kui loom<br>
+        Mitte keegi ei usu<br>
+        Et nii on minuga lood<br>
+        Lood on tõeliselt halvad<br>
+        Olen kaotanud pea<br>
+        See sai ainult kasuks sulle<br>
+        Mida kõike tegid mulle<br>
+        <br>
+        15 magamata ööd<br>
+        Olen sõdind endaga<br>
+        Teinud suurt ja julma tööd<br>
+        Et mu süda vabaks saaks<br>
+        15 magamata ööd<br>
+        Olen palund ennast ma<br>
+        Kuid sust lahti ma ei saa<br>
+        <br>
+        Tahaks hoida sind enda juures<br>
+        Tahaks saada sind veel ja veel<br>
+        Tahaks teada mida sa mõtled<br>
+        Ja mida minuga teed<br>
+        <br>
+        15 magamata ööd<br>
+        Olen sõdind endaga<br>
+        Teinud suurt ja julma tööd<br>
+        Et mu süda vabaks saaks<br>
+        15 magamata ööd<br>
+        Olen palund ennast ma<br>
+        Kuid sust lahti ma ei saa<br>
+        <br>
+        15 magamata ööd<br>
+        Olen sõdind endaga<br>
+        Teinud suurt ja julma tööd<br>
+        Et mu süda vabaks saaks<br>
+        15 magamata ööd<br>
+        Olen palund ennast ma<br>
+        Kuid sust lahti ma ei saa<br>
+        <br>
+        15 magamata ööd<br>
+        15 magamata ööd<br>
+        <br>        
+    </div>
+    <div id="song50" class="song-text" style="display:none"> <h3 class="song-title">Ines - Keerlen</h3>
+        <br>
+        Täna ma tean<br>
+        täna ma tunnen ja mõtlen.<br>
+        Homset ei tea<br>
+        homset ma ette ei mõtle.<br>
+        Täna on hea<br>
+        täna ma kõrgustes seiklen,<br>
+        su eest võitlen,jagan kõike.<br>
+        Täna on kuum<br>
+        täna on öö nagu filmis.<br>
+        Naeratab kuu<br>
+        muudab mind lendavaks ingliks.<br>
+        Kannab mind tuul, puhub ja lennutab lehti<br>
+        neid ei keegi, rebi lahti.<br>
+        <br>        
+        Ma keerlen, ma pöörlen,<br> 
+        täna mind kätel kannad.<br> 
+        Ma keerlen, ma pöörlen<br> 
+        täna mul armu annad<br> 
+        kuid homme kui koidab<br> 
+        põgenen kiirelt ja kaon<br> 
+        sa mu said<br> 
+        kuid kohe olen läind.<br> 
+        <br> 
+        Homme on käes<br> 
+        midagi ees mind ei oota.<br> 
+        Lukustan end oma tuppa<br> 
+        ja eilsesse vaatan.<br> 
+        Tundub, et seal,<br> 
+        kus veel eile nii hea<br> 
+        ei toond õnne, vajun unne<br> 
+        näen sind jälle.<br> 
+        <br>       
+        Ma keerlen, ma pöörlen,<br>
+        täna mind kätel kannad.<br>
+        Ma keerlen, ma pöörlen<br>
+        täna mul armu annad<br>
+        kuid homme kui koidab<br>
+        põgenen kiirelt ja kaon<br>
+        sa mu said<br>
+        kuid kohe olen läind.<br>       
+        <br>
+        Täna mu said<br>
+        hambad kõrri lõid.<br>
+        Täna mu said<br>
+        hambad kõrri lõid.<br>
+        <br>        
+        Ma keerlen, ma pöörlen,<br>
+        täna mind kätel kannad.<br>
+        Ma keerlen, ma pöörlen<br>
+        täna mul armu annad<br>
+        kuid homme kui koidab<br>
+        põgenen kiirelt ja kaon<br>
+        sa mu said<br>
+        kuid kohe olen läind.<br>
+        <br>
+        Ma keerlen ja pöörlen<br>
+        homme kui koidab<br>
+        põgenen kiirelt ja kaon<br>
+        sa mu said<br>
+        kuid kohe olen läind.<br>
+        <br>        
+    </div>
+    <div id="song51" class="song-text" style="display:none"> <h3 class="song-title">Ines - Kus kulgeb kuu</h3>
+        <br>
+        Päev õhtuks pöörab<br>
+        Saab tänasest möödunud aeg<br>
+        Tumedam veelgi<br>
+        On värv meie pööningulael<br>
+        <br>
+        Aegajalt näib<br>
+        et Armastus Surmaga käekõrval käib<br>
+        On hetki mil näib<br>
+        Et kõik, mis sa suudad,<br>
+        on korraga läind´<br>
+        <br>
+        Kus kulgeb kuu, kulgeb kuu<br>
+        On öö noor kui peatud Sa<br>
+        Kus kulgeb kuu, kulgeb kuu<br>
+        Kas kuuled mind, ma ei tea.<br>
+        <br>
+        Silm kinni vajub,<br>
+        Ka siis kui ei olegi und.<br>
+        Külm sisse murrab<br>
+        Mis sest et ei sajagi lund<br>
+        <br>
+        Aegajalt näib<br>
+        et Armastus Surmaga käekõrval käib<br>
+        On hetki mil näib<br>
+        Et kõik, mis sa suudad,<br>
+        on korraga läind´<br>
+        <br>
+        Kus kulgeb kuu, kulgeb kuu<br>
+        On öö noor kui peatud Sa<br>
+        Kus kulgeb kuu, kulgeb kuu<br>
+        Kas kuuled mind, ma ei tea.<br>
+        Kus kulgeb kuu, kulgeb kuu<br>
+        On öö noor kui peatud Sa<br>
+        Kus kulgeb kuu, kulgeb kuu<br>
+        Kas kuuled mind, ma ei tea.<br>
+        <br>
+        Kus kulgeb kuu, kulgeb kuu<br>
+        On öö noor kui peatud Sa<br>
+        Kus kulgeb kuu, kulgeb kuu<br>
+        Kas kuuled mind, ma ei tea.<br>
+        Kus kulgeb kuu, kulgeb kuu<br>
+        On öö noor kui peatud Sa<br>
+        Kus kulgeb kuu, kus kulgeb kuu.<br>
+        Kas kuuled mind, ma ei tea.<br>
+        <br>
+        Ma ei tea<br>
+        <br>        
+    </div>
+    <div id="song52" class="song-text" style="display:none"> <h3 class="song-title">Ines - Väike saatan</h3>
+        <br>
+        Loen endamisi õhtutunde<br>
+        Ei jõua ära oodata<br>
+        Mul kogu päeva selline on olnud tunne<br>
+        Et midagi võib õhtul juhtuda<br>
+        <br>
+        Ma keeran lemmikraadio lahti<br>
+        Ja sõpradele helistan<br>
+        Et näeme kümne ajal Vabaduse platsis<br>
+        Ja teeme seda kõike mida saab<br>
+        <br>
+        Täna õhtul tõstab pead<br>
+        Väike saatan õla peal<br>
+        Vastu panna talle ma ei saa<br>
+        Horoskoobist diivanil<br>
+        Logeledes lugesin<br>
+        Et täna pisut pahandust pean tegema<br>
+        <br>
+        Ma ennast eriti ei vaeva<br>
+        Et mis kõik juhtub ja mis saab<br>
+        Ei viitsi mõtelda<br>
+        Et mida keegi arvab<br>
+        Ma tean mis teen<br>
+        Ja nii on mulle hea<br>
+        <br>
+        Täna õhtul tõstab pead<br>
+        Väike saatan õla peal<br>
+        Vastu panna talle ma ei saa<br>
+        Horoskoobist diivanil<br>
+        Logeledes lugesin<br>
+        Et täna pisut pahandust pean tegema<br>
+        <br>
+        Ooooooooeee<br>
+        <br>
+        Mul täna õhtul tõstab pead<br>
+        Väike saatan õla peal<br>
+        Vastu panna talle ma ei saa (ei)<br>
+        Horoskoobist diivanil<br>
+        Logeledes lugesin<br>
+        Et täna pisut pahandust pean tegema<br>
+        <br>
+        (Täna õhtuuul)<br>
+        Täna õhtul tõstab pead<br>
+        Väike saatan õla peal<br>
+        Vastu panna talle ma ei saa (ei saa,ei saa)<br>
+        Horoskoobist diivanil<br>
+        Logeledes lugesin<br>
+        Et täna pisut pahandust pean tegema<br>
+        <br>        
+    </div>
+    <div id="song53" class="song-text" style="display:none"> <h3 class="song-title">Ursula - Tiffer</h3>
+        <br>        
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        <br>
+        Kui sa tulid minu poole seelikus<br>
+        ma tõmbasin sulle bemariga kõrvale ja pildusin:<br>
+        "Beib, kenad jalad, kena top!"<br>
+        Sa vastasid: "Ää, mina vä?!"<br>
+        Ma tajusin, see tshikk on oma jope ja<br>
+        ma mõtlesin, et öö seda kodus paneks,<br>
+        sa istusid minu musta unelmasse<br>
+        ja me tõmbasime Pirtale.<br>
+        <br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        <br>
+        Rannas, kus tüübid juba viinadega<br>
+        tõmban torso välja nahast särgist.<br>
+        Sa küsid: "Mida mina nüüd siis teen?"<br>
+        Ma vastan: "Ole ilus."<br>
+        Kuum on, sa riietad end lahti,<br>
+        tuleb Ahti ja hakkab nilbusi pilduma,<br>
+        mõtlen: "Klassikaline Ahti.."<br>
+        Ja jooksen kikivarvul laintesse.<br>
+        <br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        <br>
+        Tõmbasime siis looduskaitsealale ja mõtlesin,<br>
+        et tiiki vaja on mu kalale.<br>
+        Jõudsime siis autoga metsa -<br>
+        KUI BENSIIN SAI OTSA.<br>
+        Lükkasime, lükkasime, lükkasime, lükkasime, lükkasime<br>
+        auto metsast välja otse tiiki,<br>
+        täiega triiki, tsikk oli vihane.<br>
+        Lihased lihased.<br>
+        <br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        Ma ei kuule sind, sa ei kuule mind.<br>
+        <br>
+        Ütle Jaanus (Jaanus), ütle Albert (Albert)<br>
+        Ütle Jaanus Albert Destilleerivad.<br>
+        Jaanus Albert Destilleerivad.<br>
+        <br>        
+    </div>
+    <div id="song54" class="song-text" style="display:none"> <h3 class="song-title">Ursula - Heiki</h3>
+        <br>
+        Istun üksinda<br>
+        Teised tantsivad<br>
+        Vaatan tüdrukuid<br>
+        Nad mind ei vaata<br>
+        Ilus kleidike<br>
+        Rohekas veidike<br>
+        Lilla slehviga<br>
+        Ta tantsib Heikiga<br>
+        Ja ma nutan end puruks<br>
+        Sest, et ta jälle tantsib Heikiga<br>
+        <br>
+        Pühin pisara<br>
+        Võtan vasara<br>
+        Nutan üksinda<br>
+        Teised ei nuta<br>
+        <br>
+        Pilgud kohtuvad<br>
+        Süda seisatab<br>
+        Silmad maha löön<br>
+        Ja taskust vahvleid söön<br>
+        Ja ma nutan end puruks<br>
+        Sest, et ta jälle tantsib Heikiga<br>
+        Jälle tantsib Heikiga<br>
+        Jälle tantsib Heikiga<br>        
+        Üksinda istun ma jälle taas<br>
+        Istun<br>
+        Ja tema<br>
+        Ja tema<br>
+        Tantsib Heikiga<br>
+        Heikiga<br>
+        Jälle<br>
+        Heikiga<br>
+        Heikiga<br>
+        Heikiga<br>
+        Heikiga<br>
+        Heikiga<br>
+        Heikiga<br>
+        <br>        
+    </div>
+    <div id="song55" class="song-text" style="display:none"> <h3 class="song-title">Terminaator - Juulikuu lumi</h3>
+        <br>
+        Kõik ei ole kõrb mis paneb, kurgu kuivama<br>
+        Neetud külmus veel ei pruugi olla Antarktika, ja-ja...<br>
+        Kõik mis ahvatleb ja hiilgab ei ole ju veel kuld<br>
+        Ma ei hüüa sinu nime sest ma kardan tuld<br>
+        <br>
+        Kõik ei ole teras, mis südamesse haava lööb<br>
+        Kõik ei ole ajuvähk, mis mõistuse mul´t sööb<br>
+        Kõik mis ahvatleb ja hiilgab ei ole ju veel kuld<br>
+        Ma ei hüüa sinu nime sest ma kardan tuld<br>
+        <br>
+        juulikuus lumi on maas, minu jaoks see pole ime<br>
+        seisad paljajalu rannal, oled kaunis oled kummaline<br>
+        tean et aasta veel ja sinust, ilma jään ma niikuinii<br>
+        pimeduses kuulen häält, mis hüüab - hüvasti<br>
+        <br>
+        Ainus pole joodud vein, mis hommikul sul valutama paneb pea<br>
+        Iga naise puudutus ei saagi olla ühtemoodi hea<br>
+        Iga elatud päev on samm, lähemale iseenda surmale<br>
+        Ainus mida ma tean sind kunagi ei saanud päris endale, jee-jee...<br>
+        <br>
+        juulikuus lumi on maas, minu jaoks see pole ime<br>
+        seisad paljajalu rannal, oled kaunis oled kummaline<br>
+        tean et aasta veel ja sinust, ilma jään ma niikuinii<br>
+        pimeduses kuulen häält, mis hüüab - hüvasti<br>
+        <br>
+        juulikuus lumi on maas, minu jaoks see pole ime<br>
+        seisad paljajalu rannal, oled kaunis oled kummaline<br>
+        tean et aasta veel ja sinust, ilma jään ma niikuinii<br>
+        pimeduses kuulen häält, mis hüüab - hüvasti<br>
+        <br>        
+    </div>
+    <div id="song56" class="song-text" style="display:none"> <h3 class="song-title">Terminaator - 13 sammu</h3>
+        <br>
+        Kord kokku lugeda ma püüdsin oma sammud,<br>
+        et oleks selge, kus ma käinud ja kuhu olen teel<br>
+        siis avastasin, et ma ringiratast tammun<br>
+        kuid see ei loe, ma tahan teha seda veel<br>
+        <br>
+        Koduuksest bändibussini on 13 sammu<br>
+        Back stage'ist lavani on 7,2<br>
+        Selle raja valisin ma väga-väga ammu<br>
+        aga tundub, tee ei muutu ajas kergemaks<br>
+        <br>
+        Ööklubipimeduses kaduda võib rada<br>
+        seal kohata võib kauneid haldjaid ja koletisi ka<br>
+        ööklubi välisukseni on samme sada<br>
+        ei tea kas pääsen välja elusana ma<br>
+        <br>
+        Koduuksest bändibussini on 13 sammu<br>
+        Back stage'ist lavani on 7,2<br>
+        Selle raja valisin ma väga-väga ammu<br>
+        aga tundub, tee ei muutu ajas kergemaks<br>
+        <br>
+        Hotelli voodist mini-baarini on samme 4<br>
+        nukralt ohkan ja end rännakule sean...<br>
+        ja kõrvus vilistab see eileöine heli<br>
+        nüüd oma käidud teid niiväga hästi tean<br>
+        <br>
+        Bändibussist koduukseni on 13 sammu<br>
+        seekord läks hästi, sest et... MA HINGAN VEEL!!!!<br>
+        selle raja valisin ma väga-väga ammu<br>
+        ja mul ei ole õrna aimu, kuhu viib mind tee<br>
+        <br>
+        Bändibussist koduukseni on 13 sammu<br>
+        seekord läks hästi, sest et... MA HINGAN VEEL!!!!<br>
+        selle raja valisin ma väga-väga ammu<br>
+        ja mul ei ole õrna aimu, kuhu viib mind tee<br>
+        <br>        
+    </div>
+    <div id="song57" class="song-text" style="display:none"> <h3 class="song-title">Terminaator - Ainult sina võid mu maailma muuta</h3>
+        <br>
+        Maailm ära väsitanud, hinge maha põletanud<br>
+        kuid siiski pole lootus läinud<br>
+        kuigi silmad on valet näinud<br>
+        et ükskord saan su endale<br>
+        <br>
+        Tuul on segi ajand juuksed<br>
+        hääletuks on jäänd mu nuuksed<br>
+        ja jälle seisan siin ja ootan<br>
+        keelatud ei ole ju loota<br>
+        et ükskord saan su endale<br>
+        <br>
+        Külmetand mind põhjatuuled<br>
+        hääl on kähe, puruks huuled<br>
+        siiski hüüan tahaks minagi suuta<br>
+        kuid ainult sina võid mu maailma muuta<br>
+        sest sa kuulud minule<br>
+        tahaks minagi suuta<br>
+        kuid ainult sina võid mu maailma muuta<br>
+        sest sa kuulud minule<br>
+        <br>
+        Üksi liiga raske olla<br>
+        tahaks sinu juurde tulla<br>
+        kuid sa ei tohi mulle andeks anda<br>
+        jalutama mu'ga tulla randa<br>
+        ja öelda et kuulun sinule<br>
+        <br>
+        Sa vaatad mind ja tasa nutad<br>
+        mu viimse mõistuse mu'lt võtad<br>
+        kuid ütlen armastan sind kahtlemata<br>
+        kuid ei tohi sind ma tahta<br>
+        kuigi kuulun sinule<br>
+        <br>
+        Külmetand mind põhjatuuled<br>
+        hääl on kähe, puruks huuled<br>
+        siiski hüüan tahaksin ma suuta<br>
+        kuid ainult sina võid mu maailma muuta<br>
+        sest sa kuulud minule<br>
+        tahaksin ma suuta<br>
+        kuid ainult sina võid mu maailma muuta<br>
+        sest sa kuulud minule<br>
+        <br>
+        Kuulud ainult minule<br>
+        <br>        
+    </div>
+    <div id="song58" class="song-text" style="display:none"> <h3 class="song-title">Terminaator - Ajateenija</h3>
+        <br>
+        Kui juba hommikul vara rivis seisma pead sa<br>
+        Mina poole päevani jään voodisse lebama<br>
+        Nii kaunis on hommik<br>
+        Mind ootab kuum ja päikseline Pirita<br>
+        <br>
+        Keset kuuma päeva metsas higisena jooksed sa<br>
+        Sa ju tead et gaasimaskis suvel raske hingata<br>
+        Ka minul on palav<br>
+        On palju kauneid naisi rannas liikumas<br>
+        <br>
+        On nädal mööda läinud ja koju sa ei saa<br>
+        Su tüdruk laupäeva õhtul tantsib diskol üksinda<br>
+        Sa kasarmu peldikult nii kurvalt<br>
+        Küürid oma hambaharjaga<br>
+        <br>
+        Ja pärast kõike seda valmis oled kohtuma surmaga<br>
+        Oh, ema, kui sa vaid näeksid pojast mees on sul sirgumas<br>
+        <br>
+        Sina samblikutes roomad<br>
+        Kiidad kõrgemal seisvat meest<br>
+        Oma sõjaväekarjaari algad ikka orjusest<br>
+        Ja kui alandlik oled<br>
+        Võid ühel päeval kamandada roodu ees<br>
+        <br>
+        Oh miks küll enam ei kuula Singer-Vingerit sa<br>
+        Kes laulis et sa kodusõjas surma ei saa<br>
+        Selle peale raadiost juba<br>
+        Uusi eurolaule jõudsid lindistada<br>
+        
+        Minust iial ei saa ajateenija<br>
+        Olen hullumeelne ja see ausalt muret tekitab<br>
+        Et lapseks vist jään ja meheks ei sirgugi iial ma<br>
+        <br>
+        Ja pärast kõike seda oled kohtuma surmaga<br>
+        Oh, ema, kui sa vaid näeksid pojast mees on sul sirgumas<br>
+        <br>
+        Poisid, rahva kaitsejad<br>
+        Sõrve sääre tipust Narvani on meie maa<br>
+        Veel võib vabalt hingata<br>
+        Ka Hiina müürini võib Eesti piirid lükata<br>
+        <br>
+        Ja pärast kõike seda valmis oled kohtuma surmaga<br>
+        Oh, ema, kui sa vaid näeksid pojast mees on sul sirgumas<br>
+        <br>
+        Ja pärast kõike seda valmis oled kohtuma surmaga<br>
+        Oh, ema, kui sa vaid näeksid pojast mees on sul sirgumas<br>
+        <br>
+        Ja siin põhjatähe all me võime vabadusse uskuda<br>
+        Kuid meheks iial sa ei saa kui pole olnud ajateenija<br>
+        <br>
+        Ja pärast kõike seda sinu juurde tulen ja jään<br>
+        Ja su juurde ma saabun läbi tule ja jää<br>
+        <br>
+        Ja pärast kõike seda sinu juurde tulen ja jään<br>
+        Ja su juurde ma saabun läbi tule ja jää<br>
+        <br>        
+    </div>
+    <div id="song59" class="song-text" style="display:none"> <h3 class="song-title">Stefan - Kiri külmkapi peal</h3>
+        <br>
+        Peatub aeg<br>
+        Kui oleks maailm seisma jäänd<br> 
+        Tahaks muuta veel<br>
+        Meie käidud teid<br>
+        Et saaks hoida taas su käest<br>
+        <br>
+        Möödub päev<br>
+        Nagu iga teine öö<br>
+        Istun külmas trammis<br>
+        Tühjad pilgud<br>
+        Saadavad mind teel<br>
+        <br>
+        Kui meid endaga kaasa viib aeg nõnda kiirelt<br>
+        Ma tean ma tean ma tean<br>
+        Nüüd me seisame koos selle saatuse ringis<br>
+        Ma tean ma tean ma tean<br>
+        <br>
+        Meie rong on ammu läind ja sõidab nüüd oma teed<br>  
+        Ei enam enam peatu<br>
+        Miks me põgeneme teineteise valede eest<br>
+        Ei enam enam peatu<br>
+        Elu nagu orkaan, viib eemale maast<br>
+        Ei enam enam peatu<br>
+        “Armastasin sind” on kiri külmkapil peal<br>
+        Kuid me ei enam enam peatu<br>
+        Ei enam enam peatu<br>
+        Ei enam enam peatu<br>
+        <br>
+        Oooo<br>
+        Liigub vaid tuul meie tubades ringi<br>
+        Sinu pilgust ma näen, see on külm nagu jää<br>
+        Sul keegi teine?<br>
+        <br>
+        Kõik minu laulud, <br>
+        Mis meeldisid sulle<br>
+        On põrandal kildudena maas<br>
+        <br>
+        Kamina tulle<br>
+        On lendamas tunded<br>
+        Sädemeist tuhk on saanud taas<br>
+        <br>
+        Meie rong on ammu läind ja sõidab nüüd oma teed<br> 
+        Ei enam enam peatu<br>
+        Miks me põgeneme teineteise valede eest<br>
+        Ei enam enam peatu<br>
+        Elu nagu orkaan, viib eemale maast<br>
+        Ei enam enam peatu<br>
+        “Armastasin sind” on kiri külmkapil peal<br>
+        Kuid me ei enam enam peatu<br>
+        Ei enam enam peatu<br>
+        Ei enam enam peatu<br>
+        <br>
+        Kui meid endaga kaasa viib aeg nõnda kiirelt<br>
+        Ma tean ma tean ma tean<br>
+        Nüüd me seisame koos selle saatuse ringis<br>
+        Ma tean ma tean ma tean<br>
+        <br>
+        Kui meid endaga kaasa viib aeg nõnda kiirelt<br>
+        Ma tean ma tean ma tean<br>
+        Nüüd me seisame koos selle saatuse ringis<br>
+        Ma tean ma tean ma tean<br>
+        <br>
+        Meie rong on ammu läind ja sõidab nüüd oma teed<br> 
+        Ei enam enam peatu<br>
+        Miks me põgeneme teineteise valede eest<br>
+        Ei enam enam peatu<br>
+        Elu nagu orkaan, viib eemale maast<br>
+        Ei enam enam peatu<br>
+        “Armastasin sind” on kiri külmkapil peal<br>
+        Kuid me ei enam enam peatu<br>
+        Ei enam enam peatu<br>
+        Ei enam enam peatu<br>
+        <br>
+        Ei peatu, Ei peatu, Ei peatu<br>
+        Ei enam-enam peatu<br>
+        <br>
+        Ei peatu, Ei peatu, Ei peatu<br>
+        Ei enam-enam peatu<br>
+        <br>
+    </div>
+    <div id="song60" class="song-text" style="display:none"> <h3 class="song-title">Stefan - Miraaž</h3>
+        <br>
+        Sa oled kõike muutnud<br>
+        Minu tumedamast ööst on saanud päev<br>
+        On saanud päev<br>
+        Võibolla nii, et kõik hea alles ootab ees<br>
+        Õige aeg on käes ütleb seitsmes meel<br>
+        Sellest hetkest kõik võib muutuda<br>
+        Meie päev võib jälle korduda<br>
+        <br>
+        Ära lase mul lahti käest<br>
+        Ära lase mul lahti käest<br>
+        Või ma kaon kui kõrbeliiv<br>
+        <br>
+        Ja nüüd<br>
+        Oh oh oh oh<br>
+        Tean ma<br>
+        Öös ei ole piire<br>
+        Sõnadeta kiire<br>
+        Leiame end taas selles valguses<br>
+        Kuuma<br>
+        Endaga tood kaasa<br>
+        Kui mind nõnda vaatad<br>
+        Või on see miraaž minu silme ees<br>
+        Oh oh oh oh oh oh<br>
+        On see kõik miraaž?<br>
+        <br>
+        Ei, ei tea mis ootab<br>
+        Kui sa vaatad silma ja ütled nii<br>
+        Sa ütled nii<br>
+        Maailmalõppu kui koos me näeks<br>
+        Kas siis hoiaks teineteisel kinni käest<br>
+        Sellest hetkest kõik võib muutuda<br>
+        Kas mu poole siis veel hoiaks sa<br>
+        <br>        
+        Ära lase mul lahti käest<br>
+        Ära lase mul lahti käest<br>
+        Või ma kaon kui kõrbeliiv<br>        
+        <br>
+        Ja nüüd<br>
+        Oh oh oh oh<br>
+        Tean ma<br>
+        Öös ei ole piire<br>
+        Sõnadeta kiire<br>
+        Leiame end taas selles valguses<br>
+        Kuuma<br>
+        Endaga tood kaasa<br>
+        Kui mind nõnda vaatad<br>
+        Või on see miraaž minu silme ees<br>
+        Oh oh oh oh oh oh <br>
+        On see kõik miraaž?<br>
+        <br>
+    </div>
+    <div id="song61" class="song-text" style="display:none"> <h3 class="song-title">Liis Lemsalu & Stefan - Doomino</h3>
+        <br>
+        Kõik algas sel õhtul<br>       
+        Kui ma silmad sulgesin<br>
+        Ei tea kuidas sind kuulsin<br>
+        Läbi unenäo mis viis<br>
+        <br>
+        Woa linna kus keegi mind ometi ei tea<br>
+        Woa see tänane öö mul tuleb kaheks jagada<br>
+        <br>
+        On alles algus see<br>
+        Kuid juba tahan veel<br>
+        Su tulevikku näen enda silmades<br>
+        <br>
+        Ma ei tea<br>
+        On see unes või on ilmsi<br>
+        Ma ei tea<br>
+        Salaja mind siia kisti<br>
+        Silmist pillub sädemeid<br>
+        Ja taevalaeka avasin ma<br>
+        Sest ma ei tea<br>
+        On see unes või on ilmsi<br>
+        <br>
+        Palun nüüd ütle<br>
+        Kuhu see tee meid viib<br>                
+        Su nime ma ei kuulnud<br>
+        Kas liigun edasi?<br>
+        <br>
+        Woa, linna kus keegi mind ometi ei tea<br>
+        Woa, see tänane öö mul tuleb kaheks jagada<br>
+        <br>
+        On alles algus see<br>
+        Kuid juba tahan veel<br>
+        Su tulevikku näen enda silmades<br>
+        <br>
+        Nii vähe ütled sa<br>
+        Kuid kõike mõistan ma<br>
+        Ses mängus saab vaid üks meist peituda<br>
+        <br>
+        Ma ei tea on<br>
+        See unes või on ilmsi<br>
+        Ma ei tea<br>
+        Salaja mind siia kisti<br>
+        Silmist pillub sädemeid<br>
+        Ja taevalaeka avasin ma<br>
+        Sest ma ei tea<br>
+        On see unes või on ilmsi<br>
+        <br>
+        Las veel las veel<br>
+        Edasi mängib muusika<br>
+        Kõik see kõik see<br>
+        On parem kui suutsin oodata<br>
+        Silmist pillub sädemeid<br>
+        Ja taevalaeka avasin ma<br>
+        Sest ma ei tea<br>
+        On see unes võI on ilmsi<br>
+        <br>
+        Siin tundmatus vees<br>
+        Kus lõppu ei näe<br>
+        Ja doominod mu käes<br>
+        Ei tagasi kuku need<br>
+        <br>
+        Kolm soovi mu ees<br>
+        On valikus ainult see<br>
+        Et su tulevikku näeks<br>
+        Enda silmadest<br>
+        <br>
+        Ma ei tea on<br>
+        See unes või on ilmsi<br>
+        Ma ei tea<br>
+        Salaja mind siia kisti<br>
+        Silmist pillub sädemeid<br>
+        Ja taevalaeka avasin ma<br>
+        Sest ma ei tea<br>
+        On see unes võI on ilmsi<br>
+        <br>
+        Las veel las veel<br>
+        Edasi mängib muusika<br>
+        Kõik see kõik see<br>
+        On parem kui suutsin oodata<br>
+        Silmist pillub sädemeid<br>
+        Ja taevalaeka avasin ma<br>
+        Sest ma ei tea<br>
+        On see unes või on ilmsi<br>
+        <br>
+    </div>
+    <div id="song62" class="song-text" style="display:none"> <h3 class="song-title">Koit Toome - Hääletu</h3>
+        <br>
+        Istun taas nüüd siin ja ei saa ma und<br>
+        Mu tuba täis on pimedust<br>
+        Olen uppuv laev lase minna mul<br>
+        On põhjatu  mu kurbus<br>
+        Kirjutan ma sulle kirjutan veel ühe kirja nüüd enda peas<br>
+        Veel appi ma hüüan kuid olen hääletu<br>
+        <br>
+        Olen lahtine haav mis haiget teeb<br>
+        Ma elan lootuses mis mind seest poolt sööb<br>
+        Kas tahan tagasi minna veel<br>
+        Sind ma meeletult igatsen<br>
+        Veelkord nõus olen tundma valu mis pole uus<br>
+        <br>
+        Oma tunde vang olen siiani<br>
+        Kuid midagi ei kahetse<br>
+        Jõuan põhja siis jälle tõusen siit<br>
+        On valus aga siiski<br>
+        Kirjutan ma sulle kirjutan veel ühe kirja nüüd enda peas<br>
+        Veel appi ma hüüan kuid olen hääletu<br>
+        <br>
+        Olen lahtine haav mis haiget teeb<br>
+        Ma elan lootuses mis mind seest poolt sööb<br>
+        Kas tahan tagasi minna veel<br>
+        Sind ma meeletult igatsen<br>
+        Veelkord nõus olen tundma valu mis pole uus<br>
+        <br>
+        Ei lootus ei usk aita mind su juurde<br>
+        Hüüan nüüd kogu jõust kas keegi üldse mind veel kuuleb<br>
+        <br>
+        Kas tahan tagasi minna veel<br>
+        Sind ma meeletult igatsen<br>
+        Veelkord nõus olen tundma valu mis pole uus<br>
+        <br>
+        Olen lahtine haav mis haiget teeb<br>
+        Ma elan lootuses mis mind seest poolt sööb<br>
+        Kas tahan tagasi minna veel<br>
+        Sind ma meeletult igatsen<br>
+        Veelkord nõus olen tundma valu mis pole uus<br>
+        <br>
+    </div>
+    <div id="song63" class="song-text" style="display:none"> <h3 class="song-title">Andrei Zevakin & An-Marlen - Valikud</h3>
+        <br>
+        Unisena enne hommiku tunde<br>
+        mu peast läbi käid<br>
+        Kuid need mõtted viskan tulle<br>
+        Nüüd tean ma<br>
+        et täna ilma sinuta saan<br>
+        Su tegudele vabandusi alati leidsin<br>
+        ja ennast sinu ego taha<br>
+        ära ma peitsin<br>
+        Nüüd tean ma<br>
+        et täna ilma sinuta saan<br>
+        <br>
+        Las kõik läheb nii, kuis peab<br>
+        Kõik halb ju muutub heaks<br>
+        Alles nüüd ma aru sain<br>
+        raske võib olla<br>
+        aga valikuid ma tegema pean<br>
+        <br>
+        Las kõik läheb nii, kuis peab<br>
+        Kõik halb ju muutub heaks<br>
+        Alles nüüd ma aru sain<br>
+        raske võib olla<br>
+        aga valikuid ma tegema pean<br>
+        <br>
+        Ma pole täna see, kes olin ma ju eile<br>
+        Seda tunnistada endale nii veider<br>
+        Õige hetk, aga mõtted olid teised<br>
+        Kuid nüüd tean ma<br>
+        ja nüüd tead sa<br>
+        Ja loopida me tuulde võime kõik need tunded<br>
+        Ma teadsin seda kõike, aga öelda ei julgend<br>
+        Sõnad mu suust kõlavad teisiti ju sulle<br>
+        kas nüüd tead sa<br>
+        ja nüüd tead sa<br>
+        ja nüüd tean ma<br>
+        <br>
+        Las kõik läheb nii, kuis peab<br>
+        Kõik halb ju muutub heaks<br>
+        Alles nüüd ma aru sain<br>
+        raske võib olla<br>
+        aga valikuid ma tegema pean<br>
+        <br>
+    </div>
+    <div id="song64" class="song-text" style="display:none"> <h3 class="song-title">Andrei Zevakin & Pluuto - Wingman</h3>
+        <br>
+        Tal hoidnud silma peal<br>
+        Kuis minema ma peaksin<br>
+        Kui nime veel ei tea<br>
+        (võta kokku ennast, ma ei saa aru mis su probleem on)<br>
+        <br>
+        Mind sa veel ei tea<br>
+        Ma näitan, mis nüüd saab<br>
+        Lihtsalt tule minuga<br>
+        (see kõnnib küll täiesti teiselepoole)<br>
+        <br>
+        Ma neist ühe pidin valima<br>
+        A mulle ei meeldi sahida<br>
+        Ma vaatan pigem kaugelt,<br>
+        Kui su ümber on see lahing<br>
+        Sest et suu ta hoiab kinni,<br>
+        Aga keha räägib ladinas<br>
+        Ma kartsin, et su peale läheb suuremaks siin madinaks<br>
+        Ja vahi aga vahi,<br>
+        Kõik, mis meeldib teistele<br>
+        Tal on savi<br>
+        Ja mu wingman otse järel nagu vari<br>
+        Lihtsalt praegu mul ei joppand, a neid veel on terve kari<br>
+        <br>
+        Äkki lähed proovid ise saad ta enda juurde tarida<br>
+        No ei tea kas klubis valikud on parimad?<br>
+        Kes ei proovi see ei saa eales seda karikat<br>
+        Okei see blond, aga kas see on veider kui ma vahin?<br>
+        (Mis asja? Kark alla ja minek)<br>
+        <br>
+        Tal hoidnud silma peal<br>
+        Kuis minema ma peaksin<br>
+        Kui nime veel ei tea<br>
+        (äkki mingi Triinu, Maarja või Mari?)<br>
+        <br>
+        Mind sa veel ei tea<br>
+        Ma näitan, mis nüüd saab<br>
+        Lihtsalt tule minuga<br>
+        <br>
+        Oota päriselt<br>
+        Mees ta tuligi<br>
+        Ma mõtlesin sa lähed kiirelt mööda nagu suvi siin<br>
+        A mis seal ikka lähme näitan, mis ma suudan<br>
+        Lähme teise saali otsa, paneb liikuma need puusad<br>
+        Varsti ulud nagu hunt, mitte BSH<br>
+        Hoiad keha minu küljes nagu pva<br>
+        Ja terve kari mind nüüd instagramis eemaldab,<br>
+        Sest ajad kadedaks mu kõik need vanad teemad taas<br>
+        <br>
+        Üks läheb, teine tuleb, a neid veel on seal<br> 
+        Vaata otse, vaata taha, nad me ees on reas<br>
+        <br>
+        Tal hoidnud silma peal<br>
+        Kuis minema ma peaksin<br>
+        Kui nime veel ei tea<br>
+        <br>
+        Mind sa veel ei tea<br>
+        Ma näitan, mis nüüd saab<br>
+        Lihtsalt tule minuga<br>
+        <br>
+    </div>
+    <div id="song65" class="song-text" style="display:none"> <h3 class="song-title">Jaagup Tuisk & Ines - Tuhk ja tolm</h3>
+        <br>
+        Varje viiskend halli<br>
+        Su silmis põleved<br>
+        Nii pimesi<br>
+        Valed varjuvad<br>
+        <br>
+        Ja sekund hiljem<br>
+        Mu armid sulavad<br>
+        Ja nii<br>
+        Mind taaskord põletad<br>
+        <br>
+        Aga tean<br>
+        Mida otsin<br>
+        Pole seal ya<br>
+        Elus veab<br>
+        Kui ma vähegi<br>
+        Vaid teaks ye<br>
+        <br>
+        Minu veenides<br>
+        Sõnu veerides<br>
+        Olen sinu silmapiirist<br>
+        Erileerides<br>
+        <br>
+        Kõik mis teed<br>
+        Õhtu eel<br>
+        Vaid mind hoiatab<br>
+        <br>
+        1 2 3<br>
+        On mängul lõpp kui<br>
+        Tuhk ja tolm<br>
+        Vahime tõtt ja<br>
+        Lõppakord<br>
+        See kõlab justkui...<br>
+        <br>
+        Ei suuda lõpetada,<br>
+        Parfüümiks deja-vu<br>
+        Ei muud<br>
+        Kui valed<br>
+        Valed võrratud<br>
+        <br>
+        Ta teeb mis tahab<br>
+        See võitlus võitmatu<br>
+        Ei muud<br>
+        Ta võlub ja palub<br>
+        Ma sõnun ja tajungi<br>
+        Lõplikult<br>
+        <br>
+        Et ma tean<br>
+        Mida otsin<br>
+        Pole seal yeh<br>
+        Elus veab<br>
+        Kui ma vähegi<br>
+        Vaid teaks yeh<br>
+        <br>
+        Minu veenides<br>
+        Sõnu veerides<br>
+        Olen sinu silmapiirist<br>
+        Erileerides<br>
+        <br>
+        Kõik mis teed<br>
+        Õhtu eel<br>
+        Vaid mind hoiatab<br>
+        <br>
+        1 2 3<br>
+        On mängul lõpp kui<br>
+        Tuhk ja tolm<br>
+        Vahime tõtt ja<br>
+        Lõppakord<br>
+        See kõlab justkui...<br>
+        <br>
+    </div>
+    <div id="song66" class="song-text" style="display:none"> <h3 class="song-title">Janika Sillamaa - Lootus</h3>
+        <br>
+        Lootus annab rõõmu olla, usu mind mu hell ja hea.<br>
+        Neile ongi maailm valla, kelle usk on suur.<br>
+        Päevi tõuseb meele looja, pihlapuudes vaibub tuul.<br>
+        Looja anna hingesooja, uinub valgesuu.<br>
+        <br>
+        Saada kõiki meid sel kaunil maal, lootus hea ja kindel tasakaal.<br>
+        Tõuse lendu lind, hetkeks riivab mind, tiivavari vaid.<br>
+        Saada kõiki meid sel kaunil maal, lootus hea ja kindel tasakaal.<br>
+        Looja hoia meid kaitsva varju all, sellel kaunil maal.<br>
+        <br>
+        Keegi pole liiga väike, keegi pole liiga suur.<br>
+        Kui vaid teada saaks, kus põimub hea ja kurja juur.<br>
+        Lootus annab rõõmu olla, usu mind mu hell ja hea.<br>
+        Neile ongi maailm valla, kelle usk on suur.<br>
+        <br>
+        Saada kõiki meid sel kaunil maal, lootus hea ja kindel tasakaal.<br>
+        Tõuse lendu lind, hetkeks riivab mind, tiivavari vaid.<br>
+        Saada kõiki meid sel kaunil maal, lootus hea ja kindel tasakaal.<br>
+        Looja hoia meid kaitsva varju all, sellel kaunil maal.<br>
+        Saada kõiki meid sel kaunil maal, lootus hea ja kindel tasakaal.<br>
+        <br>
+        Saada lootus meid sel kaunil maal.
+        <br>
+    </div>
+    <div id="song67" class="song-text" style="display:none"> <h3 class="song-title">Janika Sillamaa - Muretut meelt ja südametuld</h3>
+        <br>
+        Võtta võid kõik mu kullatud keed, käevõrud heita kaevu<br>
+        Jäta vaid mulle, vaevade teel, alles mu naer, kuldaväärt naer<br>
+        Hallitab hõbe ja kahvatub kuld, pärlikee mureneb kildhaaval<br>
+        Muretut meelt ja südametuld - kallimaks kuulutan ma<br>
+        <br>
+        Ei aima, me keegi, mis ootab meid veel<br>
+        Ja meeletul teel heitlik on meel<br>
+        <br>
+        Rajud ja tuuled, merel ja maal maailma muuta võivad<br>
+        Tundeile ikka jääb kullakaar - pilvede all, pilvede all<br>
+        Naeratus kandami hinge pealt viib, leevendab valu ja vaeva<br>
+        Nõnda ka laeval, puri kui tiib viib üle vaevade tee<br>
+        <br>
+        Ei aima, me keegi, mis ootab meid veel<br>
+        Ja meeletul teel heitlik on meel<br>
+        Ei aima, me halba, kuid iialgi liiga ei tee<br>
+        Ka naer, mille valgel näib veel heledam tee<br>
+        <br>
+        Ei aima, me keegi, mis ootab meid veel<br>
+        Ja meeletul teel heitlik on meel<br>
+        Ei aima, me halba, kuid iialgi liiga ei tee<br>
+        Ka naer, mille valgel näib veel heledam tee<br>
+        <br>
+    </div>
+    <div id="song68" class="song-text" style="display:none"> <h3 class="song-title">Koit Toome - Mere lapsed</h3>
+        <br>
+        Meil vanne antud, leping sõlmitud<br>
+        Kai otsad lahti päästetud<br>
+        Me pagas pardal, purjed heisatud<br>
+        Vöör koitu pööratud<br>
+        <br>
+        Näe, ahtris silmapiiri sisse lä’eb<br>
+        Ka viimne kodutorni tipp<br>
+        Nii lapsepõlv meist randa maha jääb<br>
+        Ja algabki me retk<br>
+        <br>
+        Kas mõistad, kallis, kõik meil uus on ees<br>
+        Nüüd vihmas, tuules, päikselõõsa sees<br>
+        Me ihu, hing ja meel sellel teel<br>
+        Kuuluvad vaid teineteisele<br>
+        <br>
+        Kui laiub pärani ees avarus<br>
+        Ükskõik las laetud rajust see<br>
+        Me unistused, riskid ühised ka lainte keeristes<br>
+        <br>
+        Kas mõistad, kallis, kõik meil uus on ees<br>
+        Nüüd vihmas, tuules, päikselõõsa sees<br>
+        Me ihu, hing ja meel sellel teel<br>
+        Kuuluvad vaid teineteisele<br>
+        <br>
+        Sul soodiots, mul tüür on peos<br>
+        Siht ühine meid kokku seob<br>
+        Üks on alus meil, kesk tuuli neid<br>
+        Kus ainsana meil hoida teineteist<br>
+        <br>
+        Kas mõistad, kallis, kõik meil uus on ees<br>
+        <br>
+        Kas mõistad, kallis, kõik meil uus on ees<br>
+        Nüüd vihmas, tuules, päikselõõsa sees<br>
+        Me ihu, hing ja meel sellel teel<br>
+        Kuuluvad vaid teineteisele<br>
+        <br>
+        Kas mõistad, kallis, kõik meil uus on ees<br>
+        Nüüd vihmas, tuules, päikselõõsa sees<br>
+        Me ihu, hing ja meel sellel teel<br>
+        Kuuluvad vaid teineteisele<br>
+        <br>
+    </div>
+    <div id="song69" class="song-text" style="display:none"> <h3 class="song-title">Siiri Sisask - Tagareas</h3>
+        <br>
+        Tagareas on pilgud kuumad, tagareas.<br>
+        Tagareas targad ütlemiste tuumad<br>
+        kahekesi kiirelt heidate nad välja oma peast.<br>
+        <br>
+        Liiga kaua ei ole hoolind,<br>
+        liiga kaua ei ole soovind,<br>
+        liiga kaua, koos me istuda seal kauges tagareas.<br>
+        <br>
+        Tagareas, ei tunne aega, vaid tagareas...<br>
+        Tagareas ah kas saame see murtud laeva, läbi kivi,<br>
+        hoidke kaelas, las see olla hoidku peast<br>
+        <br>
+        Liiga kaua ei ole hoolind,<br>
+        liiga kaua ei ole soovind,<br>
+        liiga kaua, koos me istuda seal kauges tagareas.<br>
+        <br>
+        Ja me ei tunne enam teineteise varju unepealt,<br>
+        mitte võõrad küll kuid tuttavad veel ainult.<br>
+        Ja meie hingedel on plekid nagu tekid voodi peal<br>
+        ja vaid paar tooli kinosaalis võib meid päästa tagareas.<br>
+        <br>
+        Liiga kaua ma ei ole hoolind,<br>
+        liiga kaua ei ole soovind,<br>
+        liiga kaua, koos me istuda seal kauges tagareas.<br>
+        <br>
+        Liiga kaua, ei ole hoolind,<br>
+        liiga kaua ei ole soovinud,<br>
+        liiga kaua koos me istuda seal kauges tagareas.<br>
+        Koos me istuda seal kauges tagareas.<br>
+        <br>
+    </div>
+    <div id="song70" class="song-text" style="display:none"> <h3 class="song-title">Maarja-Liis Ilus & Ivo Linna - Kaelakee hääl</h3>
+        <br>
+        Tead millal olen rahul, pihku kui maailm mahub<br>
+        Hoida kinni võin tuult<br>
+        Hing mässab tormivahus, kui on lahus<br>
+        Veel suudlust ootav suu<br>
+        <br>
+        Kui, hetkel on valus<br>
+        Tahan sulle mõelda vaid<br>
+        Muud ei ma siis palu<br>
+        Ka su pilk kõik öelda võib<br>
+        <br>
+        Kee merekarpidest sul teen oma hääle panen<br>
+        Sinna laulma üht viit<br>
+        Kaugel kui olen ära, ei mu pärast<br>
+        Sa hirmu tunne siis<br>
+        <br>
+        Kui, kaotan su silmist <br>
+        Pärlikee järgi sind püüan<br>
+        Hääl laineist või pilvist<br>
+        Juba kaugelt hüüab mind<br>
+        <br>
+        Kui olen kurb ja nutan soovin mu juurde ruttad<br>
+        Kee su kaelas on märg<br>
+        Juhtub, et mind kui jätad, kee sult võtan<br>
+        Siis tuhmub selle värv<br>
+        <br>
+        Tead millal olen rahul, pihku kui maailm mahub<br>
+        Hoida kinni võin tuult<br>
+        Hing mässab tormivahus, kui on lahus<br>
+        Veel suudlust ootav suu<br>
+        <br>
+        Kui olen kurb ja nutan soovin mu juurde ruttad<br>
+        Kee su kaelas on märg<br>
+        Juhtub, et mind kui jätad, kee sult võtan<br>
+        Siis tuhmub selle värv<br>
+        <br>
+        Juhtub, et mind kui jätad, kee sult võtan<br>
+        Siis tuhmub selle värv<br>
+        <br>
+    </div>
+    <div id="song71" class="song-text" style="display:none"> <h3 class="song-title">Maarja-Liis Ilus - Keelatud maa</h3>
+        <br>
+        Miks aina peidad end eilses<br>
+        kui sinna kaod, siis kadunuks jääd<br>
+        sind juba sajas kord leides<br>
+        sa mõrades praod, me vahel ma näen<br>
+        kuid kui ma loobun, siis hukkud sootuks<br>
+        <br>
+        Sel keelatud maal, ma tunnen end siin<br>
+        sind otsin ja jälle me vahel on piir<br>
+        sel keelatud maal, sind uduna varjab mu eest<br>
+        ta hajub kord siiski me teelt<br>
+        <br>
+        Kui sind ei õnnestu leida<br>
+        ja otsides päevgi väheseks jääb<br>
+        võid küll mu kõrvale heita<br>
+        ei tunne mind sa, ei kuule, ei näe<br>
+        sind mõistan siiski, taas eilses viibid<br>
+        <br>
+        Sel keelatud maal, ma tunnen end siin<br>
+        sind otsin ja jälle me vahel on piir<br>
+        sel keelatud maal, sind uduna varjab mu eest<br>
+        ta hajub kord siiski me teelt<br>
+        <br>
+        Sind ära toon keelatud maalt<br>
+        ma sulle luban, toon ära su ma<br>
+        <br>
+        Sel keelatud maal, ma tunnen end siis<br>
+        sind otsin ja jälle me vahel on piir<br>
+        see keelatud maa,meid lõputult hoida ei saa<br>
+        me vahelt kaob keelatud maa<br>
+        <br>
+    </div>
+    <div id="song72" class="song-text" style="display:none"> <h3 class="song-title">Silvi Vrait - Nagu merelaine</h3>
+        <br>
+        Ma saabun salaja, kui laine, mis randa merevaiku viib<br>
+        Ja meremaik mu huulte peal on maine, kui rõivas võbeleb kui tiib<br>
+        <br>
+        Olla võin kui jää või tulikuum, su kõigi unistuste tuum<br>
+        Ja valgel ööl ka varjust truum<br>
+        Enda nii sulle tõin ma, kuigi tean, et homme võin ma -<br>
+        Muutuda vaid nimeks sinu suul<br>
+        <br>
+        Ja muutun samuti kui laine, mis piire millekski ei pea<br>
+        Sa oled mees ja mina olen naine, tean mõnda, mida sa ei tea<br>
+        <br>
+        Olla võin kui jää või tulikuum, su kõigi unistuste tuum<br>
+        Ja valgel ööl ka varjust truum<br>
+        Enda nii sulle tõin ma, kuigi tean, et homme võin ma -<br>
+        Muutuda vaid nimeks sinu suul<br>
+        <br>
+        Ma olen nagu päev, sa öö, üks meri teine on kui maa<br>
+        Kui palju tundeid mahub meie vahele, aimata ei suuda keegi<br>
+        Muutub meri, muutub maagi<br>
+        <br>
+        Olla võin kui jää või tulikuum, su kõigi unistuste tuum<br>
+        Ja valgel ööl ka varjust truum<br>
+        Enda nii sulle tõin ma, kuigi tean, et homme võin ma -<br>
+        Muutuda vaid nimeks sinu suul<br>
+        <br>
+        Olla võin kui jää või tulikuum, su kõigi unistuste tuum<br>
+        Ja valgel ööl ka varjust truum<br>
+        Enda nii sulle tõin ma, kuigi tean, et homme võin ma -<br>
+        Muutuda vaid nimeks sinu suul<br>
+        <br>
+        Muutuda vaid nimeks sinu suul<br>
+    </div>
+</head>
+<body>   
+  </script>
+</body>
+</html>    
